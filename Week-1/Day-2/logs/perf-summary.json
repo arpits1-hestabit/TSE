@@ -1,0 +1,17 @@
+[
+  {
+    "concurrencyLevel": 1,
+    "executionTimeInSeconds": 0.152,
+    "memoryUsageInMB": 20.037193298339844
+  },
+  {
+    "concurrencyLevel": 4,
+    "executionTimeInSeconds": 0.039,
+    "memoryUsageInMB": 0.446624755859375
+  },
+  {
+    "concurrencyLevel": 8,
+    "executionTimeInSeconds": 0.06,
+    "memoryUsageInMB": 0.637603759765625
+  }
+]
