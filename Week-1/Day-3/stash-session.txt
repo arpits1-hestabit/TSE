@@ -1,0 +1,44 @@
+Stash Workflow Process:
+
+1. Initial Situation:
+   I had local uncommitted changes in my working directory that I needed to temporarily save in order to pull the latest updates from the remote repository.
+   
+2. Stashing Local Changes:
+   To save my local changes, I ran the command:
+     ```
+     git stash
+     ```
+   - This stored my uncommitted changes and cleaned up my working directory.
+
+3. Pulling Latest Changes:
+   - After stashing, I pulled the latest changes from the remote repository to ensure my local branch was up-to-date:
+     ```
+     git pull
+     ```
+
+4. Re-Applying Stashed Changes:
+   Once the pull was complete, I re-applied my stashed changes using:
+     ```
+     git stash apply
+     ```
+
+5. Conflict Resolution:
+   Conflicts arose after applying the stash. I forgot to reset the `git bisect reset` command. I manually resolved the conflicting file and then staged them:
+     ```
+     git add <conflicted-file>
+     ```
+   After resolving the conflicts, I committed the changes:
+     ```
+     git commit -m "Added stash and resolved bisect merge issue"
+     ```
+
+6. Cleaning Up the Stash:
+   Once the stashed changes were applied and committed, I ran:
+     ```
+     git stash drop
+     ```
+   This removed the stashed entry from the stash list.
+
+7. Outcome:
+   - The stash workflow allowed me to temporarily save my changes, update my local branch with the latest changes from the remote, and then reapply my changes without losing any work.
+   - After resolving any conflicts and committing, I ensured my code was up-to-date and clean.
