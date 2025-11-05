@@ -1,0 +1,8 @@
+git bisect start
+# status: waiting for both good and bad commits
+# bad: [feaa45cf1c689054e4e9b167644ef4ba89cd46bd] Introduced bug in this commit
+git bisect bad feaa45cf1c689054e4e9b167644ef4ba89cd46bd
+# status: waiting for good commit(s), bad commit known
+# good: [ae25a322f0463c839bdc20d3363b0cbc0cc8b303] Added file3.txt
+git bisect good ae25a322f0463c839bdc20d3363b0cbc0cc8b303
+# first bad commit: [feaa45cf1c689054e4e9b167644ef4ba89cd46bd] Introduced bug in this commit
