@@ -1,0 +1,48 @@
+{
+  "totalWords": 200001,
+  "uniqueWords": 77179,
+  "longestWord": "counterrevolutionaries",
+  "shortestWord": "h",
+  "topWords": [
+    {
+      "word": "rams",
+      "count": 16
+    },
+    {
+      "word": "presidents",
+      "count": 15
+    },
+    {
+      "word": "communions",
+      "count": 14
+    },
+    {
+      "word": "readings",
+      "count": 14
+    },
+    {
+      "word": "marlins",
+      "count": 13
+    },
+    {
+      "word": "intendeds",
+      "count": 13
+    },
+    {
+      "word": "graves",
+      "count": 13
+    },
+    {
+      "word": "democrats",
+      "count": 13
+    },
+    {
+      "word": "sprawls",
+      "count": 13
+    },
+    {
+      "word": "installations",
+      "count": 13
+    }
+  ]
+}
