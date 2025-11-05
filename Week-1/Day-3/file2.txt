@@ -1,2 +1,3 @@
 Hello this is file 2
 This is conflicting line in main repo.
+new line
