@@ -11,14 +11,13 @@
 
 ### 1) Identify & document (paste command + output)
 Outputs to each command are pasted below.
-- OS version
-  - Commands: `uname -a` / `lsb_release -a` / `cat /etc/os-release`
-    1. Using ‘cat /etc/os-release’
+- OS version-
+    1. Using `cat /etc/os-release`
     - Output:![alt text](<../Attachments/Screenshot from 2025-11-04 11-31-26.png>)
-    2. Using ‘lsb_release –a'
+    2. Using `lsb_release –a`
     - Output:
     ![alt text](<../Attachments/Screenshot from 2025-11-04 11-34-53.png>)
-    3. Using ‘hostnamectl’
+    3. Using `hostnamectl`
     - Output : ![alt text](<../Attachments/Screenshot from 2025-11-04 11-37-17.png>)
     
 - Current shell
@@ -63,11 +62,25 @@ Outputs to each command are pasted below.
 
 
 ### 3) introspect.js
-Created file `introspect.js` using the `nano` command. Implementation:
+Created file `introspect.js` using the `nano` command.
+Implementation:
   ![alt text](<../Attachments/Screenshot from 2025-11-04 12-42-32.png>)
 
 File Content:
-![alt text](../Attachments/Introspect.png)
+  ![alt text](../Attachments/Introspect.png)
 
 ### 4) STREAM vs BUFFER exercise (performance benchmark)
 ---
+
+1. Created a large test file (50MB+) using terminal command `dd if=/dev/urandom of=bigfile.txt bs=1M count=100`
+
+    2. Read file using both:
+     - fs.readFile (Buffer) -
+            ![alt text](<../Attachments/buffer.png>)
+     - Stream (fs.createReadStream) - 
+            ![alt text](../Attachments/stream.png)
+
+2. Capture execution time + memory usage :-
+  -  Execution and Memory time for Buffer.js and Stream.js -
+      ![alt text](<../Attachments/image copy 3.png>)
+
