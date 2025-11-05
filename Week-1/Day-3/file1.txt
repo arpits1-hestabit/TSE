@@ -1,1 +1,2 @@
-Hello this is file 1
+This is common line in both files.
+This line is in main repo.
