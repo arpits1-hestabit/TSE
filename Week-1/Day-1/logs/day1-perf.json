@@ -1,0 +1,50 @@
+[
+  {
+    "timestamp": "2025-11-05T04:06:04.485Z",
+    "script": "buffer.js",
+    "timeMs": "217.75",
+    "memoryMB": "0.11"
+  },
+  {
+    "timestamp": "2025-11-05T04:06:04.682Z",
+    "script": "stream.js",
+    "timeMs": "196.43",
+    "memoryMB": "0.05"
+  },
+  {
+    "timestamp": "2025-11-05T04:07:24.555Z",
+    "script": "buffer.js",
+    "timeMs": "208.14",
+    "memoryMB": "0.11"
+  },
+  {
+    "timestamp": "2025-11-05T04:07:24.794Z",
+    "script": "stream.js",
+    "timeMs": "237.47",
+    "memoryMB": "0.05"
+  },
+  {
+    "timestamp": "2025-11-05T04:07:32.332Z",
+    "script": "buffer.js",
+    "timeMs": "201.49",
+    "memoryMB": "0.10"
+  },
+  {
+    "timestamp": "2025-11-05T04:07:32.537Z",
+    "script": "stream.js",
+    "timeMs": "204.75",
+    "memoryMB": "0.05"
+  },
+  {
+    "timestamp": "2025-11-05T04:10:23.502Z",
+    "script": "buffer.js",
+    "timeMs": "190.50",
+    "memoryMB": "0.10"
+  },
+  {
+    "timestamp": "2025-11-05T04:10:23.766Z",
+    "script": "stream.js",
+    "timeMs": "263.32",
+    "memoryMB": "0.05"
+  }
+]
