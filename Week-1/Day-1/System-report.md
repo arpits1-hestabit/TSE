@@ -78,7 +78,7 @@ File Content:
      - fs.readFile (Buffer) -
             ![alt text](<../Attachments/buffer.png>)
      - Stream (fs.createReadStream) - 
-            ![alt text](../Attachments/stream.png)
+            ![alt text](<../Attachments/stream.png>)
 
 2. Capture execution time + memory usage :-
   -  Execution and Memory time for Buffer.js and Stream.js -
