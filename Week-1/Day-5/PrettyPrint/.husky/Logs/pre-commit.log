@@ -1,0 +1,42 @@
+Pre-commit hook started at Fri Nov  7 04:47:56 PM IST 2025
+[STARTED] Backing up original state...
+[COMPLETED] Backed up original state in git stash (675e3ea)
+[STARTED] Running tasks for staged files...
+[STARTED] package.json — 4 files
+[STARTED] *.{js,jsx,ts,tsx} — 1 file
+[STARTED] eslint
+[FAILED] eslint [FAILED]
+[FAILED] eslint [FAILED]
+[COMPLETED] Running tasks for staged files...
+[STARTED] Applying modifications from tasks...
+[SKIPPED] Skipped because of errors from tasks.
+[STARTED] Reverting to original state because of errors...
+[COMPLETED] Reverting to original state because of errors...
+[STARTED] Cleaning up temporary files...
+[COMPLETED] Cleaning up temporary files...
+
+✖ eslint:
+
+/home/arpitsaxena/Desktop/TSE/Week-1/Day-5/PrettyPrint/src/index.js
+  1:5  error  Parsing error: Unexpected token fs
+
+✖ 1 problem (1 error, 0 warnings)
+
+
+✖ eslint failed to spawn:
+Command failed with exit code 1: eslint /home/arpitsaxena/Desktop/TSE/Week-1/Day-5/PrettyPrint/src/index.js
+undefined
+Validation completed successfully.
+Pre-commit hook passed, commit allowed.
+Pre-commit hook started at Fri Nov  7 04:53:28 PM IST 2025
+→ lint-staged could not find any staged files.
+Validation completed successfully.
+Pre-commit hook passed, commit allowed.
+Pre-commit hook started at Fri Nov  7 04:54:24 PM IST 2025
+→ lint-staged could not find any staged files.
+Validation completed successfully.
+Pre-commit hook passed, commit allowed.
+Pre-commit hook started at Fri Nov  7 04:54:48 PM IST 2025
+→ lint-staged could not find any staged files matching configured tasks.
+Validation completed successfully.
+Pre-commit hook passed, commit allowed.

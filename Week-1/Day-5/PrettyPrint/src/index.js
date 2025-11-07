@@ -1,0 +1,1 @@
+const fs = rquire("fs");
