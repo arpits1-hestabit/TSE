@@ -1,0 +1,10 @@
+
+echo "Pre-commit hook running"
+
+echo "Running linting and formatting checks..."
+npx lint-staged || { echo "Linting or formatting issues found, commit aborted."; exit 1; }
+
+echo "Running validation script..."
+sh ./validate.sh || { echo "Validation failed, commit aborted."; exit 1; }
+
+echo "Pre-commit hook passed, commit allowed."
