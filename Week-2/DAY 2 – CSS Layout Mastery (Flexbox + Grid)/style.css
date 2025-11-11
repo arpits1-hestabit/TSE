@@ -1,0 +1,93 @@
+body {
+  margin: 5%;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  display: grid;
+  grid-template-areas: 
+    "header menu menu"
+    "hero hero hero"
+    "main main image"
+    "main main extra"
+    "banner banner banner";
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto 1fr auto auto auto;
+  gap: 10px;
+  padding: 10px;
+}
+
+.header {
+  grid-area: header;
+  background-color: #0F1629;
+  color: white;
+  padding: 30px;
+  text-align: center;
+}
+
+.menu {
+  grid-area: menu;
+  background-color: #EF3D4D;
+  color: white;
+  padding: 30px;
+  text-align: center;
+}
+
+.hero {
+  grid-area: hero;
+  background-color: #4C86C6;
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.main {
+  grid-area: main;
+  background-color: #24344B;
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+  margin-right: 25%;
+}
+
+.image {
+  grid-area: image;
+  background-color: #C1E4E6;
+  color: black;
+  padding: 30px;
+  text-align: center;
+}
+
+.extra {
+  grid-area: extra;
+  background-color: #4DBD97;
+  color: black;
+  padding: 30px;
+  text-align: center;
+}
+
+.banner {
+  grid-area: banner;
+  background-color: #FFD169;
+  color: black;
+  padding: 30px;
+  text-align: center;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-areas:
+      "header"
+      "menu"
+      "hero"
+      "main"
+      "image"
+      "extra"
+      "banner";
+    grid-template-columns: 1fr;
+        .main{
+            margin-right: 0;
+        }
+}
+}
