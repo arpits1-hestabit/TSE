@@ -4,7 +4,7 @@
 ![alt text](../Attachments/Reference.png)
 
 ## Final UI -
-![Final UI](<../Attachments/Final UI.png>)
+![final ui](../Attachments/image.png)
 
  ## Responsiveness - 
  ![alt text](../Attachments/responsive.png)

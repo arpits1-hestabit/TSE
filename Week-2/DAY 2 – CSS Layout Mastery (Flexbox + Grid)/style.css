@@ -21,16 +21,20 @@ body {
   grid-area: header;
   background-color: #0F1629;
   color: white;
-  padding: 30px;
+  padding: 40px;
+  font-size: 24px;
   text-align: center;
+  font-weight: bold;
 }
 
 .menu {
   grid-area: menu;
   background-color: #EF3D4D;
   color: white;
-  padding: 30px;
+  padding: 40px;
+  font-size: 24px;
   text-align: center;
+  font-weight: bold;
 }
 
 .hero {
@@ -38,7 +42,9 @@ body {
   background-color: #4C86C6;
   color: white;
   padding: 80px 20px;
+  font-size: 24px;
   text-align: center;
+  font-weight: bold;
 }
 
 .main {
@@ -47,7 +53,9 @@ body {
   color: white;
   padding: 60px 20px;
   text-align: center;
+  font-size: 24px;
   margin-right: 25%;
+  font-weight: bold;
 }
 
 .image {
@@ -55,7 +63,9 @@ body {
   background-color: #C1E4E6;
   color: black;
   padding: 30px;
+  font-size: 24px;
   text-align: center;
+  font-weight: bold;
 }
 
 .extra {
@@ -63,7 +73,9 @@ body {
   background-color: #4DBD97;
   color: black;
   padding: 30px;
+  font-size: 24px;
   text-align: center;
+  font-weight: bold;
 }
 
 .banner {
@@ -72,6 +84,7 @@ body {
   color: black;
   padding: 30px;
   text-align: center;
+  font-size: 24px;
   font-weight: bold;
 }
 
