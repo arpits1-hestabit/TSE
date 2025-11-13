@@ -2,8 +2,6 @@
 
 LOG_FILE="./.husky/Logs/validation.log"
 
-
-
 log_message() {
     echo "$(date '+%Y-%m-%d %H:%M:%S') - $1" >> "$LOG_FILE"
 }

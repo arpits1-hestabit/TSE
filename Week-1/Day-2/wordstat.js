@@ -8,38 +8,38 @@ const { Worker, isMainThread, parentPort, workerData } = require('worker_threads
 // Parse CLI arguments only in the main thread
 const argv = isMainThread
   ? yargs
-      .usage('Usage: $0 --file <file> --top <number> --minLen <number> --unique --concurrency <number>')
-      .option('file', {
-        alias: 'f',
-        description: 'Path to the corpus text file',
-        type: 'string',
-        demandOption: true,
-      })
-      .option('top', {
-        alias: 't',
-        description: 'Number of top most repeated words to display',
-        type: 'number',
-        default: 10,
-      })
-      .option('minLen', {
-        alias: 'm',
-        description: 'Minimum word length to include in analysis',
-        type: 'number',
-        default: 1,
-      })
-      .option('unique', {
-        alias: 'u',
-        description: 'Show only unique words in the analysis',
-        type: 'boolean',
-        default: false,
-      })
-      .option('concurrency', {
-        alias: 'c',
-        description: 'Number of worker threads to use for concurrency',
-        type: 'number',
-        default: 1, // Default concurrency level is 1
-      })
-      .argv
+    .usage('Usage: $0 --file <file> --top <number> --minLen <number> --unique --concurrency <number>')
+    .option('file', {
+      alias: 'f',
+      description: 'Path to the corpus text file',
+      type: 'string',
+      demandOption: true,
+    })
+    .option('top', {
+      alias: 't',
+      description: 'Number of top most repeated words to display',
+      type: 'number',
+      default: 10,
+    })
+    .option('minLen', {
+      alias: 'm',
+      description: 'Minimum word length to include in analysis',
+      type: 'number',
+      default: 1,
+    })
+    .option('unique', {
+      alias: 'u',
+      description: 'Show only unique words in the analysis',
+      type: 'boolean',
+      default: false,
+    })
+    .option('concurrency', {
+      alias: 'c',
+      description: 'Number of worker threads to use for concurrency',
+      type: 'number',
+      default: 1, // Default concurrency level is 1
+    })
+    .argv
   : null; // Don't parse arguments in worker threads
 
 // Function to process a chunk of file in worker thread
