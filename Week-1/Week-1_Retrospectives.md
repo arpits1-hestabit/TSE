@@ -12,7 +12,7 @@ What I learned -
 - Day-4: Implemented a small HTTP server (server.js) with /echo, /slow and /cache endpoints and conditional caching.
 - Day-5: Learned about Husky hooks and a tiny PrettyPrint build pipeline (scripts, pre-commit hooks).
 
-What broke / issues encountered -
+What broke / issues encountered - 
 - wordstat.js (Day-2) with worker_threads:
   - Script can hang/keep running. 
     Causes found: shebang not at file start, partial/unfinished worker code, and missing worker termination/resolve logic.
