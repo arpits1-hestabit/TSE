@@ -1,0 +1,142 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f7f7f7;
+}
+
+header {
+    background: #ffffff;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.mini {
+    color: red;
+    font-weight: bold;
+    font-size: 36px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#controls {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+#controls input,
+#controls select {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+#controls input {
+    flex: 1;
+    min-width: 150px;
+}
+
+#controls select {
+    min-width: 150px;
+}
+
+.categories {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.categories span {
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    background: #f0f0f0;
+    transition: 0.2s;
+}
+
+.categories span:hover {
+    background: #ddd;
+}
+
+.categories span.active {
+    background: #27ae60;
+    color: white;
+}
+
+#product-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: 0.2s;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: scale(1.03);
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.title {
+    font-size: 16px;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+.price {
+    color: #27ae60;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+@media (max-width: 600px) {
+    .header-top {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #controls {
+        width: 100%;
+    }
+
+    #controls input {
+        flex: unset;
+        width: 100%;
+    }
+
+    #controls select {
+        width: 100%;
+    }
+}
