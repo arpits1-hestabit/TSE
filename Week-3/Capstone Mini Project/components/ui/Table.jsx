@@ -6,16 +6,13 @@ const DataTable = () => {
     return (
         <div className="border border-gray-300 rounded-md mx-8 mt-4">
 
-            {/* Header with Icon + Title */}
             <div className="bg-gray-200 flex flex-row items-center gap-2 rounded-t-md p-3 text-gray-700 font-semibold">
                 <FaTable className="text-lg" />
                 <span>DataTable Example</span>
             </div>
 
-            {/* Top Controls */}
             <div className="flex justify-between items-center p-2 mt-4">
 
-                {/* Left: Show Entries */}
                 <div className="flex items-center">
                     <label className="mr-2">Show</label>
                     <select className="border rounded-md px-2 py-1">
@@ -27,7 +24,6 @@ const DataTable = () => {
                     <label className="ml-2">entries</label>
                 </div>
 
-                {/* Right: Search Bar */}
                 <div className="w-64">
                     <Input
                         placeholder="Search for..."
