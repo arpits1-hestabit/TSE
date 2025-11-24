@@ -11,13 +11,17 @@ import {
 export default function Sidebar() {
     return (
         <aside className="bg-[#202529] text-white  min-w-[180px] max-w-[16rem] w-full">
+
+
             <div className="px-2 py-6 text-xl max-h-[180px] font-bold bg-[#343A40]">
-                Start Bootstrap
+                <Link href="/">Start Bootstrap</Link>
             </div>
+
+
 
             <nav className="p-4 space-y-5 text-xl">
                 <Link
-                    href="/"
+                    href="/dashboard"
                     className="flex items-center gap-3 px-3 py-2 hover:bg-yellow-800 rounded"
                 >
                     <FaTachometerAlt />
