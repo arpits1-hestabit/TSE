@@ -1,0 +1,24 @@
+[2025-12-01T10:51:45.451Z] [Worker] Email worker initialized
+[2025-12-01T10:51:49.910Z] [Worker] Processing job 9: {"to":"test2@example.com","subject":"Hello from BullMQ","text":"This is a test email"}
+[2025-12-01T10:51:49.911Z] [Worker] Job 9 completed
+[2025-12-01T11:06:07.021Z] [Worker] Email worker initialized
+[2025-12-01T11:06:19.005Z] [Worker] Processing job 10: {"to":"test2@example.com","subject":"Hello from BullMQ","text":"This is a test email"}
+[2025-12-01T11:06:19.007Z] [Worker] Job 10 completed
+[2025-12-01T11:10:13.431Z] [INFO] [Worker] Email worker initialized
+[2025-12-01T11:10:21.367Z] [INFO] [Worker] Processing job 11: {"to":"test2@example.com","subject":"Hello from BullMQ","text":"This is a test email"}
+[2025-12-01T11:10:22.367Z] [INFO] [Worker] Job 11 processed successfully
+[2025-12-01T11:10:22.368Z] [INFO] [Worker] Job 11 completed
+[2025-12-01T11:21:18.920Z] [INFO] [Worker] Processing job 12: {"to":"test2@example.com","subject":"Hello from BullMQ","text":"This is a test email"}
+[2025-12-01T11:21:19.920Z] [INFO] [Worker] Job 12 processed successfully
+[2025-12-01T11:21:19.921Z] [INFO] [Worker] Job 12 completed
+[2025-12-01T11:21:41.062Z] [INFO] [Worker] Email worker initialized
+[2025-12-01T11:21:45.502Z] [INFO] [38f37d6f-d002-4b8b-946b-df7e2e236508] [Worker] Processing job 13: {"to":"test2@example.com","subject":"Hello from BullMQ","text":"This is a test email","requestId":"38f37d6f-d002-4b8b-946b-df7e2e236508"}
+[2025-12-01T11:21:46.502Z] [INFO] [38f37d6f-d002-4b8b-946b-df7e2e236508] [Worker] Job 13 processed successfully
+[2025-12-01T11:21:46.503Z] [INFO] [38f37d6f-d002-4b8b-946b-df7e2e236508] [Worker] Job 13 completed
+[2025-12-01T11:36:34.270Z] [INFO] [508e057f-165a-4183-b618-605eb508d463] [Worker] Processing job 14: {"to":"test2@example.com","subject":"Hello from BullMQ","text":"This is a test email","requestId":"508e057f-165a-4183-b618-605eb508d463"}
+[2025-12-01T11:36:35.270Z] [INFO] [508e057f-165a-4183-b618-605eb508d463] [Worker] Job 14 processed successfully
+[2025-12-01T11:36:35.271Z] [INFO] [508e057f-165a-4183-b618-605eb508d463] [Worker] Job 14 completed
+[2025-12-01T12:13:31.024Z] [INFO] [eda88c78-e53a-46f7-9c18-bb1d76bc864f] [Worker] Processing job 15: {"to":"test2@example.com","subject":"Hello from BullMQ","text":"This is a test email","requestId":"eda88c78-e53a-46f7-9c18-bb1d76bc864f"}
+[2025-12-01T12:13:32.024Z] [INFO] [eda88c78-e53a-46f7-9c18-bb1d76bc864f] [Worker] Job 15 processed successfully
+[2025-12-01T12:13:32.025Z] [INFO] [eda88c78-e53a-46f7-9c18-bb1d76bc864f] [Worker] Job 15 completed
+[2025-12-01T12:27:15.131Z] [INFO] [Worker] Email worker initialized
