@@ -1,0 +1,11 @@
+2025-11-27T12:02:24.801Z error: Fatal startup error: express is not defined
+2025-11-27T12:02:42.822Z error: Fatal startup error: express is not defined
+2025-11-27T12:07:44.926Z error: Fatal startup error: express is not defined
+2025-11-27T12:16:45.428Z error:  Fatal startup error: express is not defined
+2025-11-27T12:18:24.855Z error:  Fatal startup error: express is not defined
+2025-12-01T09:08:19.060Z error: Failed to start email worker: Cannot find module '/home/arpitsaxena/Desktop/TSE/Week-4/src/workers/emailWorker.js' imported from /home/arpitsaxena/Desktop/TSE/Week-4/index.js
+2025-12-01T09:37:27.333Z error: Failed to start email worker: Cannot find module '/home/arpitsaxena/Desktop/TSE/Week-4/src/workers/emailWorker.js' imported from /home/arpitsaxena/Desktop/TSE/Week-4/index.js
+2025-12-01T09:45:12.979Z error: Failed to start email worker: Cannot find module '/home/arpitsaxena/Desktop/TSE/Week-4/src/workers/emailWorker.js' imported from /home/arpitsaxena/Desktop/TSE/Week-4/index.js
+2025-12-01T12:21:09.618Z error: Fatal startup error: swaggerUi is not defined
+2025-12-01T12:21:20.709Z error: Fatal startup error: swaggerUi is not defined
+2025-12-01T12:25:50.312Z error: Fatal startup error: swaggerUi is not defined
