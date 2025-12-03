@@ -1,0 +1,43 @@
+2025-12-01T10:28:15.609Z info: db connected
+2025-12-01T10:28:15.611Z info: Middlewares loaded
+2025-12-01T10:28:15.611Z info: ✔ App initialized
+2025-12-01T10:28:15.613Z info: ✅ Email worker started
+2025-12-01T10:28:15.614Z info: ✔ Server started on port 5000 [local]
+2025-12-01T10:42:11.271Z info: db connected
+[2025-12-01T10:42:11.275Z] [Worker] Email worker initialized
+2025-12-01T10:42:11.273Z info: Middlewares loaded
+2025-12-01T10:42:11.273Z info: ✔ App initialized
+2025-12-01T10:42:11.275Z info: ✅ Email worker started
+2025-12-01T10:42:11.275Z info: ✔ Server started on port 5000 [local]
+[2025-12-01T10:42:17.606Z] [Worker] Processing job 7: {"to":"test2@example.com","subject":"Hello from BullMQ","text":"This is a test email"}
+[2025-12-01T10:42:17.608Z] [Worker] Job 7 completed
+[2025-12-01T10:51:23.767Z] [Worker] Processing job 8: {"to":"test2@example.com","subject":"Hello from BullMQ","text":"This is a test email"}
+[2025-12-01T10:51:23.768Z] [Worker] Job 8 completed
+2025-12-01T10:51:45.447Z info: db connected
+2025-12-01T10:51:45.450Z info: Middlewares loaded
+2025-12-01T10:51:45.450Z info: ✔ App initialized
+2025-12-01T10:51:45.452Z info: ✅ Email worker started
+2025-12-01T10:51:45.452Z info: ✔ Server started on port 5000 [local]
+2025-12-01T11:06:07.016Z info: db connected
+2025-12-01T11:06:07.019Z info: Middlewares loaded
+2025-12-01T11:06:07.019Z info: ✔ App initialized
+2025-12-01T11:06:07.021Z info: ✅ Email worker started
+2025-12-01T11:06:07.021Z info: ✔ Server started on port 5000 [local]
+2025-12-01T11:10:13.427Z info: db connected
+2025-12-01T11:10:13.430Z info: Middlewares loaded
+2025-12-01T11:10:13.430Z info: ✔ App initialized
+2025-12-01T11:10:13.432Z info: ✅ Email worker started
+2025-12-01T11:10:13.432Z info: ✔ Server started on port 5000 [local]
+2025-12-01T11:21:41.058Z info: db connected
+2025-12-01T11:21:41.061Z info: Middlewares loaded
+2025-12-01T11:21:41.061Z info: ✔ App initialized
+2025-12-01T11:21:41.063Z info: ✅ Email worker started
+2025-12-01T11:21:41.063Z info: ✔ Server started on port 5000 [local]
+2025-12-01T12:21:09.615Z info: db connected
+2025-12-01T12:21:20.707Z info: db connected
+2025-12-01T12:25:50.310Z info: db connected
+2025-12-01T12:27:15.126Z info: db connected
+2025-12-01T12:27:15.129Z info: Middlewares loaded
+2025-12-01T12:27:15.129Z info: ✔ App initialized
+2025-12-01T12:27:15.131Z info: ✅ Email worker started
+2025-12-01T12:27:15.131Z info: ✔ Server started on port 5000 [local]
