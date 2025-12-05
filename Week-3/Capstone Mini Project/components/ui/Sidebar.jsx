@@ -57,7 +57,7 @@ export default function Sidebar() {
                 </Link>
 
                 <Link
-                    href="#"
+                    href="dashboard/users"
                     className="flex items-center gap-3 px-3 py-2 hover:bg-yellow-800 rounded"
                 >
                     <FaTable />

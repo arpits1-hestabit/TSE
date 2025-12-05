@@ -1,5 +1,6 @@
 import { FaBars, FaUserCircle, FaSearch, FaCaretDown } from "react-icons/fa";
 import Input from "./Input";
+import Link from "next/link";
 
 export default function Navbar() {
     return (
@@ -22,10 +23,13 @@ export default function Navbar() {
                     </button>
                 </div>
 
-                <button className="flex items-center text-2xl text-[#9FA8A8] cursor-pointer gap-1">
-                    <FaUserCircle />
-                    <FaCaretDown />
-                </button>
+                <Link href="/dashboard/profile">
+                    <button className="flex items-center text-2xl text-[#9FA8A8] cursor-pointer gap-1">
+                        <FaUserCircle />
+                        <FaCaretDown />
+                    </button>
+                </Link>
+
             </div>
 
         </nav>
