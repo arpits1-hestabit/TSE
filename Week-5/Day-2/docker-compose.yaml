@@ -1,0 +1,35 @@
+services:
+  backend:
+    build: ./Backend
+    ports:
+      - "5000:5000"
+    networks:
+      - my-network
+    depends_on:
+      - mongo
+    command: npm start
+  
+  mongo:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    networks:
+      - my-network
+    volumes:
+      - mongo-data:/data/db
+
+  frontend:
+    build: ./Frontend/task-app
+    ports:
+      - "3000:3000"
+    networks:
+      - my-network
+    command: npm start
+
+networks:
+  my-network:
+    driver: bridge
+
+volumes:
+  mongo-data:
+    driver: local
