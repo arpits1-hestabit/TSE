@@ -1,6 +1,6 @@
 # Architecture Overview — Week-4 Project
 
-## Project layout (preferred)
+## Project layout -
 ```
 src/
 ├── config/          # Environment configuration and setup
