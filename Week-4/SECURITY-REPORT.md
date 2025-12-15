@@ -1,8 +1,5 @@
 # SECURITY REPORT — Week-4 Project
 
-# Security Overview
-
-Summary  
 This application applies layered protections at the HTTP, middleware and validation layers to reduce attack surface, enforce input constraints, and limit abusive traffic. Controls include schema validation, request throttling, CORS restrictions, secure headers, payload size enforcement and basic input sanitization.
 
 ## Input validation (Joi)
