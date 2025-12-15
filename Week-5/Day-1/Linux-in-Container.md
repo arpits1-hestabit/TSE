@@ -23,9 +23,9 @@
 
 ## Container running node app -
 - Node app Image in Docker -
-![alt text](Atachments/image.png)
+![alt text](Attachments/image.png)
 - Node app Container in Docker -
-![alt text](Atachments/container_image.png)
+![alt text](Attachments/container_image.png)
 
 
 **Always map the machine port with container port in order to run the container in the browser.**
@@ -42,38 +42,38 @@ docker exec -it node-app /bin/sh
 ## Linux commands in Container -
 
 *Using the `pwd` command* - 
-![alt text](Atachments/pwd.png)
+![alt text](Attachments/pwd.png)
 It shows present working directory.
 
 *Using the `ls -la` command* -
-![alt text](Atachments/ls-la.png)
+![alt text](Attachments/ls-la.png)
 It lists files and directories.
 
 *Using the `ls /usr` command* -
-![alt text](Atachments/ls-usr.png)
+![alt text](Attachments/ls-usr.png)
 It lists the contents of the /usr directory.
 
 *Using the `ps` command* -
-![alt text](Atachments/ps.png)
+![alt text](Attachments/ps.png)
 It displays all active processes inside the container.
 
 *Using the `df -h` command* -
-![alt text](Atachments/df-h.png)
+![alt text](Attachments/df-h.png)
 It shows overall disk space usage.
 
 *Using the `du -sh *` command* -
-![alt text](Atachments/du-sh*.png)
+![alt text](Attachments/du-sh*.png)
 It is used to see which files or directories are taking up space.
 
 *Using the `top` command* -
-![alt text](Atachments/top.png)
+![alt text](Attachments/top.png)
 It shows CPU, memory usage, and active processes in real time.
 
 *Using the `ls` command* -
-![alt text](Atachments/ls.png)
+![alt text](Attachments/ls.png)
 It is used to list files and directories.
 
 *Using the `docker logs <container-name>` command* -
-![alt text](Atachments/lgos.png)
+![alt text](Attachments/lgos.png)
 It shows the logs.
 
