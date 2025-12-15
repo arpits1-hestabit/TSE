@@ -2,6 +2,7 @@
 
 ## Overview
 The application is deployed in production using **PM2**, a robust process manager for Node.js. PM2 ensures reliability through process monitoring, automatic restarts, clustering, and zero-downtime reloads. All production-specific configuration is isolated inside the `prod/` directory.
+
 ---
 
 ## PM2 for Production
