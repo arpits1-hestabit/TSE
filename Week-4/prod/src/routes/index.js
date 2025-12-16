@@ -1,6 +1,8 @@
 import express from "express";
 import productRouter from "./products.routes.js";
 import testRoutes from "./test.routes.js";
+import logger from "../utils/logger.js";
+
 
 const router = express.Router();
 
@@ -67,5 +69,7 @@ router.use("/api", testRoutes);
  *         description: Provides access to product APIs (from products.routes.js)
  */
 router.use("/products", productRouter);
+const routecount = router.stack.length;
+logger.info(`Total Routes: ${routecount}`);
 
 export default router;

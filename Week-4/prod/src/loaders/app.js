@@ -28,21 +28,6 @@ export default async function createApp() {
 
     app.use(routes);
 
-    if (app._router) {
-        const routeStack = app._router.stack.filter(
-            (layer) => layer.route
-        );
-
-        logger.info(`Routes mounted: ${routeStack.length}`);
-
-        routeStack.forEach((layer) => {
-            const methods = Object.keys(layer.route.methods)
-                .map((m) => m.toUpperCase())
-                .join(", ");
-
-            logger.info(`➡ ${methods} ${layer.route.path}`);
-        });
-    }
 
     app.use(errorMiddleware);
 

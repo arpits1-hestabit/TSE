@@ -1,8 +1,8 @@
-import createApp from "./src/loaders/app.js";
-import config from "./src/config/env.js";
-import logger from "./src/utils/logger.js";
-import errorMiddleware from "./src/middlewares/error.middleware.js";
-import { emailWorker } from "./src/workers/email.worker.js";
+import createApp from "./prod/src/loaders/app.js";
+import config from "./prod/src/config/env.js";
+import logger from "./prod/src/utils/logger.js";
+import errorMiddleware from "./prod/src/middlewares/error.middleware.js";
+import { emailWorker } from "./prod/src/workers/email.worker.js";
 
 (async () => {
     try {
