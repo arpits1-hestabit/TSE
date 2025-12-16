@@ -1,0 +1,22 @@
+2025-12-15T10:58:50.519Z info: db connected
+2025-12-15T10:58:50.521Z info: Middlewares loaded
+2025-12-15T10:58:50.521Z info: App initialized
+2025-12-15T10:58:50.523Z info: Email worker started
+2025-12-15T10:58:50.524Z info: ✔ Server started on port 5000 [local]
+2025-12-15T11:09:35.868Z info: db connected
+2025-12-15T11:09:35.870Z info: Middlewares loaded
+2025-12-15T11:09:35.870Z info: Routes mounted: 0
+2025-12-15T11:09:35.870Z info: App initialized
+2025-12-15T11:09:35.872Z info: Email worker started
+2025-12-15T11:09:35.873Z info: ✔ Server started on port 5000 [local]
+2025-12-15T11:11:28.271Z info: db connected
+2025-12-15T11:11:28.274Z info: Middlewares loaded
+2025-12-15T11:11:28.274Z info: App initialized
+2025-12-15T11:11:28.276Z info: Email worker started
+2025-12-15T11:11:28.276Z info: ✔ Server started on port 5000 [local]
+2025-12-15T11:15:19.734Z info: Total Routes: 4
+2025-12-15T11:15:19.801Z info: db connected
+2025-12-15T11:15:19.803Z info: Middlewares loaded
+2025-12-15T11:15:19.803Z info: App initialized
+2025-12-15T11:15:19.805Z info: Email worker started
+2025-12-15T11:15:19.806Z info: ✔ Server started on port 5000 [local]
