@@ -1,3 +1,6 @@
 node_modules
+.env
+week5.day5.pem
+week5.day5-key.pem
 certnew.pem
 certnew-key.pem
