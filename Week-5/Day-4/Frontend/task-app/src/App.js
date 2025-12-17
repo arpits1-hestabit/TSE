@@ -5,7 +5,8 @@ function App() {
   const [tasks, setTasks] = useState([]);
   const [taskInput, setTaskInput] = useState("");
 
-  const API_URL = "http://localhost:3000/tasks";
+  const API_URL = "https://certnew/api/tasks";
+  // const API_URL = "/api/tasks";
 
   // Fetch tasks from backend
   const fetchTasks = async () => {
