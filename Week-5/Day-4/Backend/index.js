@@ -32,7 +32,7 @@ const Task = mongoose.model('Task', taskSchema);
 // Routes
 
 // GET /tasks - Retrieve all tasks
-app.get('/tasks', async (req, res) => {
+app.get('/api/tasks', async (req, res) => {
     try {
         const tasks = await Task.find();
         console.log(`Fetched ${tasks.length} tasks from the database.`);
@@ -44,7 +44,7 @@ app.get('/tasks', async (req, res) => {
 });
 
 // POST /tasks - Create a new task
-app.post('/tasks', async (req, res) => {
+app.post('/api/tasks', async (req, res) => {
     const { taskName } = req.body;
     console.log(`Attempting to insert task: ${taskName}`);
 
@@ -63,6 +63,9 @@ app.post('/tasks', async (req, res) => {
     }
 });
 
+app.get('/health', (req, res) => {
+    res.status(200).send('OK');
+});
 const PORT = 3000;
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
