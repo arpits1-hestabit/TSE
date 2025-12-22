@@ -192,3 +192,13 @@ LOG_PATH=src/prediction_logs.csv
 -> API must run on `0.0.0.0` inside Docker
 
 
+## Attachments
+
+### Docker Container - 
+![alt text](<Attachments/image copy 2.png>)
+
+### ML-api - 
+![alt text](<Attachments/image copy.png>)
+
+### ML-dashboard - 
+![alt text](<Attachments/image copy 3.png>)
