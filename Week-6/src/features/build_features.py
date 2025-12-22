@@ -136,4 +136,4 @@ if __name__ == "__main__":
     plt.tight_layout()
     plt.savefig(os.path.join(FEATURE_DIR, "feature_importance.png"))
 
-    print("✅ Feature engineering completed successfully.")
+    print("Feature engineering completed successfully.")
