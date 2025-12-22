@@ -67,7 +67,7 @@ MODELS = {
     ),
     "NeuralNetwork": MLPClassifier(
     hidden_layer_sizes=(32,),
-    alpha=0.01,            
+    alpha=0.01,                
     max_iter=200,
     early_stopping=True,       
     validation_fraction=0.1,
