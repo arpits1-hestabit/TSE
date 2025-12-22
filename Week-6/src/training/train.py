@@ -79,9 +79,6 @@ MODELS = {
 
 }
 
-# -------------------------
-# Cross Validation
-# -------------------------
 def cross_validate(model, X, y):
     skf = StratifiedKFold(
         n_splits=N_SPLITS,
@@ -113,9 +110,6 @@ def cross_validate(model, X, y):
 
     return {k: float(np.mean(v)) for k, v in scores.items()}
 
-# -------------------------
-# Train & Select Best Model
-# -------------------------
 def train_and_select(X_train, X_test, y_train, y_test):
 
     metrics = {}
@@ -148,9 +142,6 @@ def train_and_select(X_train, X_test, y_train, y_test):
 
     return best_model, metrics, y_test, y_pred
 
-# -------------------------
-# Run
-# -------------------------
 if __name__ == "__main__":
 
     best_model, metrics, y_true, y_pred = train_and_select(
@@ -172,4 +163,4 @@ if __name__ == "__main__":
     plt.tight_layout()
     plt.savefig(os.path.join(EVAL_DIR, "confusion_matrix.png"))
 
-    print("✅ Training complete. Best model saved.")
+    print("Best model saved.")
