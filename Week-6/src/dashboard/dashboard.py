@@ -8,7 +8,7 @@ LOG_PATH = "src/logs/prediction_logs.csv"
 
 st.set_page_config(page_title="ML Prediction Dashboard", layout="centered")
 
-st.title("📊 ML Prediction Dashboard")
+st.title("ML Prediction Dashboard")
 
 st.subheader("Enter Input Features")
 
