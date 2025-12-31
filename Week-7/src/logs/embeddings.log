@@ -1,0 +1,75 @@
+2025-12-30 15:03:20,797 | INFO | Embedding generation started
+2025-12-30 15:03:20,806 | INFO | Stopped at chunk ID: 5f226fe96206888930e3baaf0bff70d4b0a1db40.pdf_854
+2025-12-30 15:03:20,806 | INFO | Last loaded chunk ID: 5f226fe96206888930e3baaf0bff70d4b0a1db40.pdf_854
+2025-12-30 15:03:20,806 | INFO | Total chunks loaded: 2000
+2025-12-30 15:03:20,810 | INFO | Use pytorch device_name: cpu
+2025-12-30 15:03:20,810 | INFO | Load pretrained SentenceTransformer: BAAI/bge-small-en-v1.5
+2025-12-30 15:03:26,236 | INFO | Model BAAI/bge-small-en-v1.5 loaded
+2025-12-30 15:07:21,831 | INFO | Embeddings saved to src/data/chunks/embeddings.npy
+2025-12-30 15:07:21,840 | INFO | Metadata saved to src/data/chunks/metadata.json
+2025-12-30 15:07:21,840 | INFO | Embedding generation completed in 241.04s
+2025-12-30 15:46:06,644 | INFO | __main__ | embedder.py:28 | Embedding generation started
+2025-12-30 15:46:06,714 | INFO | __main__ | embedder.py:43 | Stopped at chunk ID: 5bb5f71d1457f3272adab97d64a79c300da75cea.pdf_342
+2025-12-30 15:46:06,714 | INFO | __main__ | embedder.py:46 | Last loaded chunk ID: 5bb5f71d1457f3272adab97d64a79c300da75cea.pdf_342
+2025-12-30 15:46:06,714 | INFO | __main__ | embedder.py:47 | Total chunks loaded: 20000
+2025-12-30 15:46:06,715 | INFO | sentence_transformers.SentenceTransformer | SentenceTransformer.py:219 | Use pytorch device_name: cpu
+2025-12-30 15:46:06,715 | INFO | sentence_transformers.SentenceTransformer | SentenceTransformer.py:227 | Load pretrained SentenceTransformer: BAAI/bge-small-en-v1.5
+2025-12-30 15:46:11,194 | INFO | __main__ | embedder.py:50 | Model BAAI/bge-small-en-v1.5 loaded
+2025-12-30 16:23:22,060 | INFO | __main__ | embedder.py:60 | Embeddings saved to src/data/chunks/embeddings.npy
+2025-12-30 16:23:22,136 | INFO | __main__ | embedder.py:69 | Metadata saved to src/data/chunks/metadata.json
+2025-12-30 16:23:22,136 | INFO | __main__ | embedder.py:70 | Embedding generation completed in 2235.49s
+2025-12-30 16:33:35,817 | INFO | __main__ | embedder.py:30 | Embedding generation started
+2025-12-30 16:33:35,897 | INFO | __main__ | embedder.py:45 | Stopped at chunk ID: 5bb5f71d1457f3272adab97d64a79c300da75cea.pdf_342
+2025-12-30 16:33:35,898 | INFO | __main__ | embedder.py:48 | Last loaded chunk ID: 5bb5f71d1457f3272adab97d64a79c300da75cea.pdf_342
+2025-12-30 16:33:35,898 | INFO | __main__ | embedder.py:49 | Total chunks loaded: 20000
+2025-12-30 16:33:35,898 | INFO | sentence_transformers.SentenceTransformer | SentenceTransformer.py:219 | Use pytorch device_name: cpu
+2025-12-30 16:33:35,899 | INFO | sentence_transformers.SentenceTransformer | SentenceTransformer.py:227 | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-12-30 16:33:54,525 | INFO | __main__ | embedder.py:52 | Model sentence-transformers/all-MiniLM-L6-v2 loaded
+2025-12-30 16:34:58,252 | INFO | __main__ | embedder.py:30 | Embedding generation started
+2025-12-30 16:34:58,542 | INFO | __main__ | embedder.py:45 | Stopped at chunk ID: c7475e1d98f9a46a4652e503881d4a67232b41d3.pdf_407
+2025-12-30 16:34:58,542 | INFO | __main__ | embedder.py:48 | Last loaded chunk ID: c7475e1d98f9a46a4652e503881d4a67232b41d3.pdf_407
+2025-12-30 16:34:58,542 | INFO | __main__ | embedder.py:49 | Total chunks loaded: 74223
+2025-12-30 16:34:58,543 | INFO | sentence_transformers.SentenceTransformer | SentenceTransformer.py:219 | Use pytorch device_name: cpu
+2025-12-30 16:34:58,543 | INFO | sentence_transformers.SentenceTransformer | SentenceTransformer.py:227 | Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-12-30 16:35:02,954 | INFO | __main__ | embedder.py:52 | Model sentence-transformers/all-MiniLM-L6-v2 loaded
+2025-12-30 16:40:37,412 | INFO | __main__ | embedder.py:30 | Embedding generation started
+2025-12-30 16:40:37,721 | INFO | __main__ | embedder.py:45 | Stopped at chunk ID: c7475e1d98f9a46a4652e503881d4a67232b41d3.pdf_407
+2025-12-30 16:40:37,721 | INFO | __main__ | embedder.py:48 | Last loaded chunk ID: c7475e1d98f9a46a4652e503881d4a67232b41d3.pdf_407
+2025-12-30 16:40:37,721 | INFO | __main__ | embedder.py:49 | Total chunks loaded: 74223
+2025-12-30 16:40:37,722 | INFO | sentence_transformers.SentenceTransformer | SentenceTransformer.py:219 | Use pytorch device_name: cpu
+2025-12-30 16:40:37,722 | INFO | sentence_transformers.SentenceTransformer | SentenceTransformer.py:227 | Load pretrained SentenceTransformer: BAAI/bge-small-en-v1.5
+2025-12-30 16:40:43,766 | INFO | __main__ | embedder.py:52 | Model BAAI/bge-small-en-v1.5 loaded
+2025-12-30 16:54:32,975 | INFO | __main__ | 159268694.py:31 | Embedding generation started
+2025-12-30 16:54:33,811 | INFO | __main__ | 159268694.py:46 | Stopped at chunk ID: c7475e1d98f9a46a4652e503881d4a67232b41d3.pdf_407
+2025-12-30 16:54:33,811 | INFO | __main__ | 159268694.py:49 | Last loaded chunk ID: c7475e1d98f9a46a4652e503881d4a67232b41d3.pdf_407
+2025-12-30 16:54:33,811 | INFO | __main__ | 159268694.py:50 | Total chunks loaded: 74223
+2025-12-30 16:54:33,813 | INFO | sentence_transformers.SentenceTransformer | SentenceTransformer.py:219 | Use pytorch device_name: cpu
+2025-12-30 16:54:33,813 | INFO | sentence_transformers.SentenceTransformer | SentenceTransformer.py:227 | Load pretrained SentenceTransformer: BAAI/bge-small-en-v1.5
+2025-12-30 16:54:43,642 | INFO | __main__ | 159268694.py:53 | Model BAAI/bge-small-en-v1.5 loaded
+2025-12-30 16:59:14,323 | INFO | sentence_transformers.SentenceTransformer | SentenceTransformer.py:227 | Load pretrained SentenceTransformer: BAAI/bge-small-en-v1.5
+2025-12-30 16:59:19,747 | INFO | __main__ | 347441338.py:36 | Embedding generation started
+2025-12-30 16:59:20,695 | INFO | __main__ | 347441338.py:51 | Stopped at chunk ID: c7475e1d98f9a46a4652e503881d4a67232b41d3.pdf_407
+2025-12-30 16:59:20,695 | INFO | __main__ | 347441338.py:54 | Last loaded chunk ID: c7475e1d98f9a46a4652e503881d4a67232b41d3.pdf_407
+2025-12-30 16:59:20,695 | INFO | __main__ | 347441338.py:55 | Total chunks loaded: 74223
+2025-12-30 16:59:20,698 | INFO | sentence_transformers.SentenceTransformer | SentenceTransformer.py:219 | Use pytorch device_name: cpu
+2025-12-30 16:59:20,698 | INFO | sentence_transformers.SentenceTransformer | SentenceTransformer.py:227 | Load pretrained SentenceTransformer: BAAI/bge-small-en-v1.5
+2025-12-30 16:59:26,058 | INFO | __main__ | 347441338.py:58 | Model BAAI/bge-small-en-v1.5 loaded
+2025-12-30 17:00:42,643 | INFO | sentence_transformers.SentenceTransformer | SentenceTransformer.py:227 | Load pretrained SentenceTransformer: BAAI/bge-small-en-v1.5
+2025-12-30 17:00:48,496 | INFO | __main__ | 569428156.py:36 | Embedding generation started
+2025-12-30 17:00:49,430 | INFO | __main__ | 569428156.py:51 | Stopped at chunk ID: c7475e1d98f9a46a4652e503881d4a67232b41d3.pdf_407
+2025-12-30 17:00:49,431 | INFO | __main__ | 569428156.py:54 | Last loaded chunk ID: c7475e1d98f9a46a4652e503881d4a67232b41d3.pdf_407
+2025-12-30 17:00:49,431 | INFO | __main__ | 569428156.py:55 | Total chunks loaded: 74223
+2025-12-30 17:00:49,435 | INFO | sentence_transformers.SentenceTransformer | SentenceTransformer.py:219 | Use pytorch device_name: cpu
+2025-12-30 17:00:49,435 | INFO | sentence_transformers.SentenceTransformer | SentenceTransformer.py:227 | Load pretrained SentenceTransformer: BAAI/bge-small-en-v1.5
+2025-12-30 17:00:55,658 | INFO | __main__ | 569428156.py:58 | Model BAAI/bge-small-en-v1.5 loaded
+2025-12-30 17:03:11,357 | INFO | sentence_transformers.SentenceTransformer | SentenceTransformer.py:227 | Load pretrained SentenceTransformer: BAAI/bge-small-en-v1.5
+2025-12-30 17:03:16,504 | INFO | __main__ | 569428156.py:36 | Embedding generation started
+2025-12-30 17:03:17,511 | INFO | __main__ | 569428156.py:51 | Stopped at chunk ID: c7475e1d98f9a46a4652e503881d4a67232b41d3.pdf_407
+2025-12-30 17:03:17,511 | INFO | __main__ | 569428156.py:54 | Last loaded chunk ID: c7475e1d98f9a46a4652e503881d4a67232b41d3.pdf_407
+2025-12-30 17:03:17,512 | INFO | __main__ | 569428156.py:55 | Total chunks loaded: 74223
+2025-12-30 17:03:17,514 | INFO | sentence_transformers.SentenceTransformer | SentenceTransformer.py:219 | Use pytorch device_name: cpu
+2025-12-30 17:03:17,514 | INFO | sentence_transformers.SentenceTransformer | SentenceTransformer.py:227 | Load pretrained SentenceTransformer: BAAI/bge-small-en-v1.5
+2025-12-30 17:03:22,104 | INFO | __main__ | 569428156.py:58 | Model BAAI/bge-small-en-v1.5 loaded
+2025-12-30 19:08:24,543 | INFO | __main__ | embedder.py:62 | Embeddings saved to src/data/chunks/embeddings.npy
+2025-12-30 19:08:24,751 | INFO | __main__ | embedder.py:71 | Metadata saved to src/data/chunks/metadata.json
+2025-12-30 19:08:24,751 | INFO | __main__ | embedder.py:72 | Embedding generation completed in 8867.34s
