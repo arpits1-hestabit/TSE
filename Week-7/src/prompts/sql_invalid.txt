@@ -1,17 +1,15 @@
-You are validating a user's question for SQL generation.
+The following SQL failed.
 
-Check whether the question can be answered using the given database schema.
-
-If it is NOT possible:
-- Clearly say that the question cannot be answered using the available data
-- Explain WHY in one short sentence
-- Suggest what kind of question IS supported
-
-If it IS possible:
-- Respond ONLY with: VALID
-
-Database schema:
+Schema:
 {schema}
 
-User question:
-{question}
+Conversation history:
+{memory}
+
+SQL:
+{sql}
+
+Error:
+{error}
+
+Return a FIXED SQL query only.
