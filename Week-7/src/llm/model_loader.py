@@ -1,27 +1,22 @@
-import os
-import torch
-from transformers import AutoTokenizer, AutoModelForCausalLM
+from transformers import AutoModelForCausalLM, AutoTokenizer
+from sentence_transformers import SentenceTransformer
 
-DEFAULT_MODEL_PATH = os.path.expanduser(
-    "~/.cache/huggingface/hub/models--Qwen--Qwen2.5-1.5B-Instruct/"
-    "snapshots/989aa7980e4cf806f80c7fef2b1adb7bc71aa306"
-)
+LLM_MODEL_NAME = "Qwen/Qwen2.5-1.5B-Instruct"
+EMBEDDINGS_MODEL_NAME = "BAAI/bge-small-en-v1.5"
 
 
-def load_llm(model_path: str = DEFAULT_MODEL_PATH):
-
+def load_cached_model_and_embeddings():
     tokenizer = AutoTokenizer.from_pretrained(
-        model_path,
+        LLM_MODEL_NAME,
         trust_remote_code=True
     )
 
     model = AutoModelForCausalLM.from_pretrained(
-        model_path,
-        torch_dtype=torch.float16 if torch.cuda.is_available() else torch.float32,
+        LLM_MODEL_NAME,
         device_map="auto",
         trust_remote_code=True
     )
 
-    model.eval()
+    embeddings = SentenceTransformer(EMBEDDINGS_MODEL_NAME)
 
-    return model, tokenizer
+    return model, tokenizer, embeddings
