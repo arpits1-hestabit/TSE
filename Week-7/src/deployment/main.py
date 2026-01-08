@@ -150,13 +150,13 @@ async def ask_sql(payload: dict):
     results = []
     executed_statements = []
     try:
-        #splitting multiple statements usign the semicolon
+        # splitting multiple statements using the semicolon
         statements = [stmt.strip() for stmt in sql_query.split(";") if stmt.strip()]
 
         for stmt in statements:
             cur.execute(stmt)
             executed_statements.append(stmt)
-            # Only fetch rows for SELECT statements
+            # only fetch rows for SELECT statements
             if stmt.lower().startswith("select"):
                 results.extend(cur.fetchall())
 
