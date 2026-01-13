@@ -1,51 +1,18 @@
-from ragas.metrics import faithfulness
-from ragas import evaluate
-from datasets import Dataset
-from transformers import pipeline
-from langchain_community.llms.huggingface_pipeline import HuggingFacePipeline
-from langchain_community.embeddings.huggingface import HuggingFaceEmbeddings
-import json
+import numpy as np
+from sentence_transformers import SentenceTransformer
+from typing import List
 
+class RAGEvaluator:
+    def __init__(self):
+        self.model = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2")
 
-def evaluate_faithfulness(
-    question: str,
-    sql_results: list,
-    answer: str,
-    llm,
-    embeddings
-):
-    context = json.dumps(sql_results, indent=2)
+    def _cosine(self, a, b):
+        return np.dot(a, b) / (np.linalg.norm(a) * np.linalg.norm(b))
 
-    dataset = Dataset.from_dict({
-        "question": [question],
-        "answer": [answer],
-        "contexts": [[context]]
-    })
+    def faithfulness_score(self, answer: str, context: str) -> float:
+        answer_emb = self.model.encode(answer)
+        context_emb = self.model.encode(context)
 
-    text_gen_pipeline = pipeline(
-        "text-generation",
-        model=llm,
-        tokenizer=llm.config._name_or_path,
-        max_new_tokens=256,
-        temperature=0
-    )
+        score = self._cosine(answer_emb, context_emb)
 
-    ragas_llm = HuggingFacePipeline(pipeline=text_gen_pipeline)
-
-    ragas_embeddings = HuggingFaceEmbeddings(
-        model_name=embeddings.model_name
-    )
-
-    scores = evaluate(
-        dataset=dataset,
-        metrics=[faithfulness],
-        llm=ragas_llm,
-        embeddings=ragas_embeddings
-    )
-
-    faithfulness_score = scores["faithfulness"][0]
-
-    return {
-        "faithfulness": round(float(faithfulness_score), 3),
-        "hallucinated": faithfulness_score < 0.7
-    }
+        return round(float(score), 3)
