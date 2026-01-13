@@ -1,60 +1,96 @@
 import json
-import faiss
 import numpy as np
-from collections import defaultdict
+import faiss
+from rank_bm25 import BM25Okapi
 from sentence_transformers import SentenceTransformer
+from generator.llm_client import generate
+
+from retriever.reranker import Reranker
+
 
 class HybridRetriever:
-    def __init__(self, index_path, meta_path, chunks_path):
-        self.index = faiss.read_index(index_path)
-        self.embedder = SentenceTransformer("BAAI/bge-small-en-v1.5")
+    def __init__(
+        self,
+        index_path,
+        metadata_path,
+        model_name="sentence-transformers/clip-ViT-B-32",
+    ):
+        self.index = faiss.read_index(str(index_path))
+        self.model = SentenceTransformer(model_name)
 
-        with open(meta_path) as f:
-            meta = json.load(f)
+        with open(metadata_path, encoding="utf-8") as f:
+            self.metadata = [json.loads(line) for line in f]
 
-        self.ids = meta["ids"]
-        self.metadatas = meta["metadatas"]
+        corpus_tokens = [m["text"].lower().split() for m in self.metadata]
+        self.bm25 = BM25Okapi(corpus_tokens)
 
-        self.text = {}
-        with open(chunks_path) as f:
-            for line in f:
-                r = json.loads(line)
-                self.text[r["chunk_id"]] = r["text"]
+        self.reranker = Reranker()
 
-    def keyword_search(self, query):
-        results = []
-        for cid, text in self.text.items():
-            if query.lower() in text.lower():
-                results.append(cid)
-        return results
+    def _bm25_search(self, query, top_k):
+        scores = self.bm25.get_scores(query.lower().split())
 
-    def semantic_search(self, query, k=20):
-        emb = self.embedder.encode([query], normalize_embeddings=True)
-        _, idxs = self.index.search(emb, k)
-        return [self.ids[i] for i in idxs[0]]
+        ranked = sorted(
+            zip(scores, self.metadata),
+            key=lambda x: x[0],
+            reverse=True
+        )
 
-    def rrf(self, rankings, k=60):
-        scores = defaultdict(float)
-        for rank_list in rankings:
-            for rank, cid in enumerate(rank_list):
-                scores[cid] += 1 / (k + rank + 1)
-        return scores
+        return [
+            {
+                "text": doc["text"],
+                "metadata": doc["metadata"],
+                "bm25_score": float(score),
+                "source": "bm25",
+            }
+            for score, doc in ranked[:top_k]
+            if score > 0
+        ]
 
-    def retrieve(self, query, top_k=10):
-        sem = self.semantic_search(query)
-        key = self.keyword_search(query)
+    def _rrf_fusion(self, ranked_lists, top_k, k=60):
+        rrf_scores = {}
+        for docs in ranked_lists:
+            for rank, doc in enumerate(docs):
+                doc_id = (doc["text"], json.dumps(doc["metadata"], sort_keys=True))
+                if doc_id not in rrf_scores:
+                    rrf_scores[doc_id] = {
+                        "doc": doc,
+                        "score": 0.0,
+                    }
+                rrf_scores[doc_id]["score"] += 1.0 / (k + rank + 1)
 
-        rrf_scores = self.rrf([sem, key])
+        fused = sorted(
+            rrf_scores.values(),
+            key=lambda x: x["score"],
+            reverse=True
+        )
 
-        results = sorted(rrf_scores.items(), key=lambda x: x[1], reverse=True)
+        return [f["doc"] for f in fused[:top_k]]
 
-        docs = []
-        for cid, score in results[:top_k]:
-            docs.append({
-                "chunk_id": cid,
-                "text": self.text[cid],
-                "metadata": {},
-                "rrf_score": score
-            })
 
-        return docs
+    def search(self, query, top_k=5, filters=None):
+        query_emb = self.model.encode(
+            query, normalize_embeddings=True
+        ).astype("float32")
+        scores, indices = self.index.search(
+            np.array([query_emb]), top_k * 3
+        )
+
+        vector_results = [
+            {
+                "text": self.metadata[i]["text"],
+                "metadata": self.metadata[i]["metadata"],
+                "vector_score": float(s),
+                "source": "vector",
+            }
+            for s, i in zip(scores[0], indices[0])
+            if i != -1
+        ]   
+
+        bm25_results = self._bm25_search(query, top_k * 2)
+
+        fused_results = self._rrf_fusion(
+            ranked_lists=[vector_results, bm25_results],
+            top_k=top_k * 2
+        )
+
+        return self.reranker.rerank(query, fused_results, top_k)
