@@ -60,10 +60,10 @@ def generate_embeddings():
 
         np.save(OUT_EMB, embeddings)
         logger.info(f"Embeddings saved to {OUT_EMB}")
-
+    
         with open(OUT_META, "w", encoding="utf-8") as f:
             json.dump(
-                {"ids": ids, "metadatas": metadatas},
+                {"ids": ids,"text":texts, "metadatas": metadatas},
                 f,
                 ensure_ascii=False,
                 indent=2
