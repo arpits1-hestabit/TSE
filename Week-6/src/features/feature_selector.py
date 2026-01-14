@@ -1,10 +1,10 @@
 from sklearn.feature_selection import SelectFromModel
-from sklearn.ensemble import RandomForestRegressor
+from sklearn.ensemble import RandomForestClassifier
 
 
 def select_features(X, y):
 
-    model = RandomForestRegressor(
+    model = RandomForestClassifier(
         n_estimators=100,
         random_state=42,
         n_jobs=-1
