@@ -14,16 +14,14 @@ EVAL_DIR = os.path.join(BASE_DIR, "evaluation")
 
 os.makedirs(EVAL_DIR, exist_ok=True)
 
-# Load model and data
+# Loading model and data
 model = joblib.load(MODEL_PATH)
 
 X_test = np.load(os.path.join(DATA_DIR, "X_test.npy"))
 y_test = np.load(os.path.join(DATA_DIR, "y_test.npy"))
 
-# IMPORTANT: same binarization as training
 y_test = (y_test > 10).astype(int)
 
-# Predict probabilities
 y_prob = model.predict_proba(X_test)[:, 1]
 
 # ROC curve
@@ -34,7 +32,6 @@ roc_auc = auc(fpr, tpr)
 best_idx = np.argmax(tpr - fpr)
 best_threshold = thresholds[best_idx]
 
-# Save threshold
 with open(os.path.join(EVAL_DIR, "threshold.json"), "w") as f:
     json.dump(
         {
