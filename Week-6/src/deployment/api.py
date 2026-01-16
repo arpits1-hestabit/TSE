@@ -9,7 +9,6 @@ from datetime import datetime
 import os
 
 
-
 app = FastAPI(title="ML Prediction API", version="1.0")
 
 MODEL_PATH = "src/models/best_model.pkl"
@@ -89,10 +88,12 @@ def predict(request: PredictionRequest):
     log_prediction(request_id, payload, prediction, probability)
 
     return {
-        "request_id": request_id,
-        "prediction": prediction,
-        "probability": probability
-    }
+    "request_id": request_id,
+    "prediction": prediction,
+    "label_meaning": "1 = High Value Customer, 0 = Low Value Customer",
+    "probability": probability
+}
+
 
 @app.get("/health")
 def health():

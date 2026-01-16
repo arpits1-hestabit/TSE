@@ -1,14 +1,28 @@
 import sqlite3
 
-def load_schema(db_path):
+def load_schema(db_path: str) -> dict:
+    
     conn = sqlite3.connect(db_path)
-    cur = conn.cursor()
+    cursor = conn.cursor()
 
-    cur.execute("""
-        SELECT sql FROM sqlite_master
-        WHERE type='table'
-    """)
+    cursor.execute(
+        "SELECT name FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%';"
+    )
+    tables = [row[0] for row in cursor.fetchall()]
 
-    schema = "\n".join(row[0] for row in cur.fetchall())
+    schema = {}
+    for table in tables:
+        cursor.execute(f"PRAGMA table_info({table});")
+        schema[table] = [row[1] for row in cursor.fetchall()]
+
     conn.close()
     return schema
+
+
+def format_schema_for_prompt(schema: dict) -> str:
+    
+    lines = []
+    for table, columns in schema.items():
+        cols = ", ".join(columns)
+        lines.append(f"Table {table}({cols})")
+    return "\n".join(lines)

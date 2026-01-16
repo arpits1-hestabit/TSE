@@ -41,6 +41,7 @@ def clean_data(df):
         mask &= df[col].between(lower, upper)
 
     df = df[mask]
+
     return df
 
 
@@ -51,6 +52,7 @@ def save_data(df):
 def main():
     df = load_data()
     df = clean_data(df)
+    df['TotalPrice'] = df['Quantity'] * df['UnitPrice']
     save_data(df)
 
 if __name__ == "__main__":

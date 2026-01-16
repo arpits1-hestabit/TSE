@@ -57,6 +57,7 @@ if submitted:
         st.success("Prediction Output:-")
         st.metric("Prediction", result["prediction"])
         st.metric("Probability", round(result["probability"], 3))
+        st.info("Label Meaning: 1 = High Value Customer, 0 = Low Value Customer")
 
     except Exception as e:
         st.error(f"API Error: {e}")
