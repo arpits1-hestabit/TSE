@@ -2,7 +2,7 @@
 
 Natural language to SQL conversion with error recovery.
 
-## Architecture
+## Pipeline flow
 
 ```
 Natural Language Question

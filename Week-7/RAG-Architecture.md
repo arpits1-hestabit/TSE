@@ -2,7 +2,7 @@
 
 Enterprise RAG system with multimodal retrieval and SQL query capabilities.
 
-## System Overview
+## Pipeline flow
 
 ```
                 User Query
