@@ -4,7 +4,7 @@ from typing import List
 
 class RAGEvaluator:
     def __init__(self):
-        self.model = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2")
+        self.model = SentenceTransformer("BAAI/bge-small-en-v1.5")
 
     def _cosine(self, a, b):
         return np.dot(a, b) / (np.linalg.norm(a) * np.linalg.norm(b))

@@ -3,8 +3,8 @@ import numpy as np
 import faiss
 from pathlib import Path
 
-embeddings_file = Path("src/data/vectorstore/images/embeddings.npy")
-metadata_file = Path("src/data/vectorstore/images/metadata.jsonl")
+embeddings_file = Path("src/vectorstore/images/embeddings.npy")
+metadata_file = Path("src/data/chunks/metadata.jsonl")
 index_file = Path("src/vectorstore/images/faiss.index")
 
 def main():
