@@ -1,86 +1,197 @@
-# Deployment Notes
+## Overview
 
-Deployment guide for the Enterprise RAG system.
+The deployment system consists of two main components:
+- **FastAPI Backend** (`app.py`) - RESTful API server for RAG operations
+- **Streamlit Frontend** (`ui.py`) - Interactive user interface for the RAG Assistant
 
-# Install dependencies
-pip install fastapi uvicorn streamlit
-pip install torch transformers sentence-transformers
-pip install faiss-cpu pillow pytesseract
-pip install langchain-community ragas datasets
-pip install requests pydantic
+## Architecture
 
-# Install Tesseract OCR
-sudo apt-get install tesseract-ocr  # Ubuntu
+### Backend (FastAPI)
 
+**File:** [src/deployment/app.py](src/deployment/app.py)
 
-## Data Setup
-```
-All the below files must exist:
-    src/data/
-    pipelines/injest.py
-    embeddings/embedder.py
-    vectorstore/index.faiss
-    data.app.db
+The FastAPI application serves as the core backend providing REST endpoints for three main RAG modes:
 
-```
+#### Endpoints
 
-# Starting the app
-```
-uvicorn src.deployment.main:app --host 0.0.0.0 --port 8000 --reload
-```
+1. **Text RAG Endpoint: `/ask`** (POST)
+   - Accepts a text question
+   - Returns answer with context and faithfulness score
+   - Uses: `ask_retrieval()` from test suite
+   - Evaluates: Faithfulness score via RAGEvaluator
 
-### Start Frontend
-```
-streamlit run app.py --server.port 8501
-```
+2. **Image RAG Endpoint: `/ask-image`** (POST)
+   - Supports three modes:
+     - **Image + Question**: Multi-modal retrieval (image_to_text_final)
+     - **Image Only**: Image-based search (image_to_image_final)
+     - **Question Only**: Text-to-image retrieval (text_to_image_final)
+   - Parameters:
+     - `question` (optional): Text query
+     - `image` (optional): Image file (jpg, png, jpeg)
+     - `top_k` (default: 5): Number of results
 
-Access UI at: **http://localhost:8501**
+3. **SQL RAG Endpoint: `/ask-sql`** (POST)
+   - Accepts a natural language question about database
+   - Generates SQL queries and returns results
+   - Uses: SQLPipeline with `sales.db`
+   - Returns: Query summary and results
 
-## API Endpoints
+#### Key Components
 
-**Base URL**: `http://localhost:8000`
+- **RAG Evaluator**: `RAGEvaluator()` for quality metrics
+- **SQL Pipeline**: Integrated database query engine
+- **Upload Directory**: `tmp/uploads/` for temporary file storage
 
-### 1. Health Check
+#### Dependencies
+
+- FastAPI framework
+- Image search modules from retriever package
+- SQL Pipeline from pipelines
+- RAG evaluation utilities
+
+---
+
+### Frontend (Streamlit)
+
+**File:** [src/deployment/ui.py](src/deployment/ui.py)
+
+Interactive web interface for the RAG Assistant with three operational modes.
+
+#### Operational Modes
+
+1. **Text RAG Mode**
+   - Text area for question input
+   - Calls `/ask` endpoint
+   - Displays: Answer and faithfulness score
+   - Timeout: 600 seconds
+
+2. **Image RAG Mode**
+   - Optional question input
+   - Image file uploader (jpg, png, jpeg)
+   - Calls `/ask-image` endpoint
+   - Parameters: top_k = 5
+   - Displays: Answer and faithfulness score
+   - Timeout: 1000 seconds
+   - Handles: Image file transmission to backend
+
+3. **SQL RAG Mode**
+   - Question input for database queries
+   - Calls `/ask-sql` endpoint
+   - Displays: Query result summary
+   - Specialized for database interaction
+
+---
+
+## Running the Deployment
+
+### Prerequisites
+
+Ensure all dependencies from [requirements.txt](requirements.txt) are installed.
+
+### Start Backend Server
+
 ```bash
-curl http://localhost:8000/
+cd /home/arpitsaxena/Desktop/TSE/Week-7
+
+# Option 1: Development mode with auto-reload
+uvicorn src.deployment.app:app --reload
+
+# Option 2: Production mode
+uvicorn src.deployment.app:app --host 0.0.0.0 --port 8000
 ```
 
-### 2. Text Search
-```
- POST http://localhost:8000/ask
+**Default:** `http://localhost:8000`
+
+API Documentation available at: `http://localhost:8000/docs`
+
+### Start Frontend Interface
+
+In a separate terminal:
+
+```bash
+cd /home/arpitsaxena/Desktop/TSE/Week-7/src/deployment
+
+streamlit run ui.py
 ```
 
-### 3. Image Search
-```
-# Text to image, image to Text, Text to Text and Image to Image
-POST http://localhost:8000/ask-image
+**Default:** `http://localhost:8501`
 
- - requires mode, query and top_k value.
+### Required Services
+
+- **FastAPI Backend**: Must be running on `http://localhost:8000`
+- **Database**: `sales.db` must be available for SQL operations
+- **Embedding Models**: CLIP embedder and vector store indices
+- **FAISS Index**: Vector search index for retrieval
+
+---
+
+## Data Flow
+
+### Text RAG Flow
 
 ```
-
-### 4. SQL Query
-```
-POST http://localhost:8000/ask-sql
- - requires query and type.
-```
-
-## Configuration
-
-### Environment Variables
-```
-DB_PATH=data/app.db
-HF_HOME=/path/to/models
-API_PORT=8000
-LOG_LEVEL=INFO
+User Question 
+    ↓
+Streamlit UI (/ask endpoint)
+    ↓
+FastAPI Backend (ask_retrieval)
+    ↓
+Retriever Module (vector search)
+    ↓
+LLM Generation
+    ↓
+RAG Evaluator (faithfulness scoring)
+    ↓
+Response with Score
 ```
 
-### Attachments
-1. Text-search
-    ![alt text](Attachments/image.png)
-2. Image-search
-    ![alt text](Attachments/image-1.png)
-    - All conversion types :-
-    ![alt text](Attachments/image-3.png)
-3. SQL-search
-    ![alt text](Attachments/image-2.png)
+### Image RAG Flow
+
+```
+User Input (Image/Question)
+    ↓
+Streamlit UI (file upload to /ask-image)
+    ↓
+FastAPI Backend (file saved to tmp/uploads)
+    ↓
+Image Embedder (CLIP)
+    ↓
+Multi-modal Retriever (image_to_text_final, etc.)
+    ↓
+Context Building
+    ↓
+RAG Evaluator
+    ↓
+Response
+```
+
+### SQL RAG Flow
+
+```
+Natural Language Question
+    ↓
+Streamlit UI (/ask-sql endpoint)
+    ↓
+SQL Pipeline
+    ↓
+Query Generation (LLM-based)
+    ↓
+Database Execution
+    ↓
+Result Summarization
+    ↓
+Response
+```
+
+---
+
+## Environment Variables
+
+May require configuration:
+- `DATABASE_PATH` - Location of sales.db
+- `MODEL_PATH` - Path to CLIP model
+- `FAISS_INDEX_PATH` - Vector index location
+- `API_PORT` - FastAPI port (default: 8000)
+- `STREAMLIT_PORT` - Streamlit port (default: 8501)
+
+---
