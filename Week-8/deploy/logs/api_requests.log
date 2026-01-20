@@ -1,0 +1,231 @@
+2026-01-20 13:07:43,370 - INFO - REQUEST e7aee65f-3570-439e-b19f-5104e1cda837 START POST http://127.0.0.1:9000/chat
+2026-01-20 13:07:43,370 - INFO - REQUEST e7aee65f-3570-439e-b19f-5104e1cda837 BODY: {'request_id': 'e7aee65f-3570-439e-b19f-5104e1cda837', 'messages': [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': 'explain how to find the factorial of a number'}], 'temperature': 0.7, 'top_p': 0.95, 'max_tokens': 256, 'stream': True}
+2026-01-20 13:07:43,471 - INFO - REQUEST e7aee65f-3570-439e-b19f-5104e1cda837 END STATUS: 200
+2026-01-20 13:10:42,450 - INFO - REQUEST 98feadb3-7110-497e-bba1-4fdbb50db86e START POST http://127.0.0.1:9000/chat
+2026-01-20 13:10:42,450 - INFO - REQUEST 98feadb3-7110-497e-bba1-4fdbb50db86e BODY: {'request_id': '98feadb3-7110-497e-bba1-4fdbb50db86e', 'messages': [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': 'Explain how child classes work'}], 'temperature': 0.7, 'top_p': 0.95, 'max_tokens': 256, 'stream': True}
+2026-01-20 13:10:42,686 - INFO - REQUEST 98feadb3-7110-497e-bba1-4fdbb50db86e END STATUS: 200
+2026-01-20 13:14:17,888 - INFO - REQUEST ebe145c5-e043-440f-9603-75ec019c0d13 START POST http://127.0.0.1:9000/chat
+2026-01-20 13:14:17,888 - INFO - REQUEST ebe145c5-e043-440f-9603-75ec019c0d13 BODY: {'request_id': 'ebe145c5-e043-440f-9603-75ec019c0d13', 'messages': [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': 'Explain how the factorial of a number works?'}], 'temperature': 0.7, 'top_p': 0.95, 'max_tokens': 256, 'stream': True}
+2026-01-20 13:14:18,152 - INFO - REQUEST ebe145c5-e043-440f-9603-75ec019c0d13 END STATUS: 200
+2026-01-20 13:14:40,107 - INFO - REQUEST 2c95b78e-89d0-45ed-985a-c0c0be73144c START POST http://127.0.0.1:9000/generate
+2026-01-20 13:14:40,107 - INFO - REQUEST 2c95b78e-89d0-45ed-985a-c0c0be73144c BODY: {'request_id': '2c95b78e-89d0-45ed-985a-c0c0be73144c', 'prompt': 'Explain how the factorial of a number works?', 'system_prompt': 'You are a helpful assistant.', 'temperature': 0.7, 'top_p': 0.95, 'max_tokens': 256, 'stream': True}
+2026-01-20 13:14:40,545 - INFO - REQUEST 2c95b78e-89d0-45ed-985a-c0c0be73144c END STATUS: 200
+2026-01-20 13:16:31,070 - INFO - REQUEST b398b3bd-2030-469a-96dd-1b1ff2e2d2f0 START POST http://127.0.0.1:9000/generate
+2026-01-20 13:16:31,070 - INFO - REQUEST b398b3bd-2030-469a-96dd-1b1ff2e2d2f0 BODY: {'request_id': 'b398b3bd-2030-469a-96dd-1b1ff2e2d2f0', 'prompt': 'explain how the factorial works', 'system_prompt': 'You are a helpful assistant.', 'temperature': 0.7, 'top_p': 0.95, 'max_tokens': 256, 'stream': True}
+2026-01-20 13:16:31,354 - INFO - REQUEST b398b3bd-2030-469a-96dd-1b1ff2e2d2f0 END STATUS: 200
+2026-01-20 13:17:01,106 - INFO - REQUEST a9fc61d8-841a-48bc-9fbe-243698bb3f6c START POST http://127.0.0.1:9000/chat
+2026-01-20 13:17:01,106 - INFO - REQUEST a9fc61d8-841a-48bc-9fbe-243698bb3f6c BODY: {'request_id': 'a9fc61d8-841a-48bc-9fbe-243698bb3f6c', 'messages': [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': 'explain how the factorial works'}], 'temperature': 0.7, 'top_p': 0.95, 'max_tokens': 256, 'stream': True}
+2026-01-20 13:17:01,235 - INFO - REQUEST a9fc61d8-841a-48bc-9fbe-243698bb3f6c END STATUS: 200
+2026-01-20 13:20:52,417 - INFO - REQUEST 8610d521-0bbe-479c-84bd-378a370d0bee START POST http://127.0.0.1:9000/generate
+2026-01-20 13:20:52,417 - INFO - REQUEST 8610d521-0bbe-479c-84bd-378a370d0bee BODY: {'request_id': '8610d521-0bbe-479c-84bd-378a370d0bee', 'prompt': 'Explain how the factorial of a number works.\ngive answer in bulleted points', 'system_prompt': 'You are a helpful assistant.', 'temperature': 0.7, 'top_p': 0.95, 'max_tokens': 256, 'stream': True}
+2026-01-20 13:20:52,767 - INFO - REQUEST 8610d521-0bbe-479c-84bd-378a370d0bee END STATUS: 200
+2026-01-20 13:28:39,969 - INFO - REQUEST 9e0dadcd-9130-468c-a54c-2b0ab83990ef START POST http://127.0.0.1:9000/generate
+2026-01-20 13:28:39,969 - INFO - REQUEST 9e0dadcd-9130-468c-a54c-2b0ab83990ef BODY: {'request_id': '9e0dadcd-9130-468c-a54c-2b0ab83990ef', 'prompt': 'explain how factorial of anumber works\n', 'system_prompt_key': 'default', 'temperature': 0.7, 'top_p': 0.95, 'max_tokens': 256, 'stream': True}
+2026-01-20 13:28:40,881 - INFO - REQUEST 9e0dadcd-9130-468c-a54c-2b0ab83990ef END STATUS: 200
+2026-01-20 14:15:42,503 - INFO - REQUEST 9ea3ce82-4cac-4a60-9a45-36c495875c1a START POST http://127.0.0.1:9000/generate
+2026-01-20 14:15:42,503 - INFO - REQUEST 9ea3ce82-4cac-4a60-9a45-36c495875c1a BODY: {'request_id': '9ea3ce82-4cac-4a60-9a45-36c495875c1a', 'prompt': 'show the code to find a number is anagram or not\n', 'temperature': 0.7, 'top_p': 0.95, 'max_tokens': 256, 'stream': True}
+2026-01-20 14:15:45,131 - INFO - REQUEST 9ea3ce82-4cac-4a60-9a45-36c495875c1a END STATUS: 200
+2026-01-20 14:19:10,408 - INFO - REQUEST 749a953f-7bf4-4fd1-8ddb-da0b8e09e563 START POST http://127.0.0.1:9000/generate
+2026-01-20 14:19:10,408 - INFO - REQUEST 749a953f-7bf4-4fd1-8ddb-da0b8e09e563 BODY: {'request_id': '749a953f-7bf4-4fd1-8ddb-da0b8e09e563', 'prompt': 'show the code to find a number is anagram or not\n', 'temperature': 0.7, 'top_p': 0.95, 'max_tokens': 256, 'stream': True}
+2026-01-20 14:19:10,517 - INFO - REQUEST 749a953f-7bf4-4fd1-8ddb-da0b8e09e563 END STATUS: 200
+2026-01-20 14:19:23,257 - INFO - REQUEST 55f9891c-0bf4-42c9-acba-bbe46726fba1 START POST http://127.0.0.1:9000/generate
+2026-01-20 14:19:23,257 - INFO - REQUEST 55f9891c-0bf4-42c9-acba-bbe46726fba1 BODY: {'request_id': '55f9891c-0bf4-42c9-acba-bbe46726fba1', 'prompt': 'show the code to find a number is anagram or not\n', 'temperature': 0.7, 'top_p': 0.95, 'max_tokens': 256, 'stream': True}
+2026-01-20 14:19:25,106 - INFO - REQUEST 52ec8ed7-f6ce-42ae-b3df-fe68562883af START POST http://127.0.0.1:9000/generate
+2026-01-20 14:19:25,106 - INFO - REQUEST 52ec8ed7-f6ce-42ae-b3df-fe68562883af BODY: {'request_id': '52ec8ed7-f6ce-42ae-b3df-fe68562883af', 'prompt': 'show the code to find a number is anagram or not\n', 'temperature': 0.7, 'top_p': 0.95, 'max_tokens': 256, 'stream': True}
+2026-01-20 14:19:25,293 - INFO - REQUEST 5ae101b2-2716-4eaa-9cbb-3d9a2a1c01d7 START POST http://127.0.0.1:9000/generate
+2026-01-20 14:19:25,294 - INFO - REQUEST 5ae101b2-2716-4eaa-9cbb-3d9a2a1c01d7 BODY: {'request_id': '5ae101b2-2716-4eaa-9cbb-3d9a2a1c01d7', 'prompt': 'show the code to find a number is anagram or not\n', 'temperature': 0.7, 'top_p': 0.95, 'max_tokens': 256, 'stream': True}
+2026-01-20 14:19:26,075 - INFO - REQUEST 55f9891c-0bf4-42c9-acba-bbe46726fba1 END STATUS: 200
+2026-01-20 14:19:28,753 - INFO - REQUEST 5ae101b2-2716-4eaa-9cbb-3d9a2a1c01d7 END STATUS: 200
+2026-01-20 14:19:28,754 - INFO - REQUEST 52ec8ed7-f6ce-42ae-b3df-fe68562883af END STATUS: 200
+2026-01-20 14:20:06,844 - INFO - REQUEST e2718d98-bc42-45e9-86fd-a7c6c6e37a6f START POST http://127.0.0.1:9000/generate
+2026-01-20 14:20:06,844 - INFO - REQUEST e2718d98-bc42-45e9-86fd-a7c6c6e37a6f BODY: {'request_id': 'e2718d98-bc42-45e9-86fd-a7c6c6e37a6f', 'prompt': 'show the code to find a number is anagram or not. give the output in bullet points\n', 'temperature': 0.7, 'top_p': 0.95, 'max_tokens': 256, 'stream': True}
+2026-01-20 14:20:07,126 - INFO - REQUEST e2718d98-bc42-45e9-86fd-a7c6c6e37a6f END STATUS: 200
+2026-01-20 14:25:25,277 - INFO - REQUEST 4741548d-68eb-4c72-bb30-cdcfa5a6e3fe START POST http://127.0.0.1:9000/generate
+2026-01-20 14:25:25,277 - INFO - REQUEST 4741548d-68eb-4c72-bb30-cdcfa5a6e3fe BODY: {'request_id': '4741548d-68eb-4c72-bb30-cdcfa5a6e3fe', 'prompt': 'show how the anagram works', 'temperature': 0.7, 'top_p': 0.95, 'max_tokens': 256, 'stream': True}
+2026-01-20 14:25:25,629 - INFO - REQUEST 4741548d-68eb-4c72-bb30-cdcfa5a6e3fe END STATUS: 200
+2026-01-20 14:25:29,080 - INFO - REQUEST ea828322-5e14-46b2-a933-6db1c470dfed START POST http://127.0.0.1:9000/generate
+2026-01-20 14:25:29,081 - INFO - REQUEST ea828322-5e14-46b2-a933-6db1c470dfed BODY: {'request_id': 'ea828322-5e14-46b2-a933-6db1c470dfed', 'prompt': 'show how the anagram works', 'temperature': 0.7, 'top_p': 0.95, 'max_tokens': 256, 'stream': True}
+2026-01-20 14:25:29,186 - INFO - REQUEST ea828322-5e14-46b2-a933-6db1c470dfed END STATUS: 200
+2026-01-20 14:25:30,747 - INFO - REQUEST 75d3caaa-e665-4dc5-abe3-c7aa4484ccde START POST http://127.0.0.1:9000/generate
+2026-01-20 14:25:30,747 - INFO - REQUEST 75d3caaa-e665-4dc5-abe3-c7aa4484ccde BODY: {'request_id': '75d3caaa-e665-4dc5-abe3-c7aa4484ccde', 'prompt': 'show how the anagram works', 'temperature': 0.7, 'top_p': 0.95, 'max_tokens': 256, 'stream': True}
+2026-01-20 14:25:30,849 - INFO - REQUEST 75d3caaa-e665-4dc5-abe3-c7aa4484ccde END STATUS: 200
+2026-01-20 14:25:32,585 - INFO - REQUEST d6aaea95-796a-4513-b0ba-13a0ed38e314 START POST http://127.0.0.1:9000/generate
+2026-01-20 14:25:32,585 - INFO - REQUEST d6aaea95-796a-4513-b0ba-13a0ed38e314 BODY: {'request_id': 'd6aaea95-796a-4513-b0ba-13a0ed38e314', 'prompt': 'show how the anagram works', 'temperature': 0.7, 'top_p': 0.95, 'max_tokens': 256, 'stream': True}
+2026-01-20 14:25:32,704 - INFO - REQUEST d6aaea95-796a-4513-b0ba-13a0ed38e314 END STATUS: 200
+2026-01-20 14:25:34,483 - INFO - REQUEST bf17b4c8-4626-423c-95a6-061ceb64c9d7 START POST http://127.0.0.1:9000/generate
+2026-01-20 14:25:34,483 - INFO - REQUEST bf17b4c8-4626-423c-95a6-061ceb64c9d7 BODY: {'request_id': 'bf17b4c8-4626-423c-95a6-061ceb64c9d7', 'prompt': 'show how the anagram works', 'temperature': 0.7, 'top_p': 0.95, 'max_tokens': 256, 'stream': True}
+2026-01-20 14:25:34,586 - INFO - REQUEST bf17b4c8-4626-423c-95a6-061ceb64c9d7 END STATUS: 200
+2026-01-20 14:25:41,018 - INFO - REQUEST 00f24630-2017-470f-9aa6-05182558f669 START POST http://127.0.0.1:9000/generate
+2026-01-20 14:25:41,018 - INFO - REQUEST 00f24630-2017-470f-9aa6-05182558f669 BODY: {'request_id': '00f24630-2017-470f-9aa6-05182558f669', 'prompt': 'show how the anagram works', 'temperature': 0.7, 'top_p': 0.95, 'max_tokens': 256, 'stream': True}
+2026-01-20 14:25:41,279 - INFO - REQUEST 00f24630-2017-470f-9aa6-05182558f669 END STATUS: 200
+2026-01-20 14:25:44,909 - INFO - REQUEST 016dba50-cd63-4779-b1ac-bb1f2845581a START POST http://127.0.0.1:9000/generate
+2026-01-20 14:25:44,909 - INFO - REQUEST 016dba50-cd63-4779-b1ac-bb1f2845581a BODY: {'request_id': '016dba50-cd63-4779-b1ac-bb1f2845581a', 'prompt': 'show how the anagram works', 'temperature': 0.7, 'top_p': 0.95, 'max_tokens': 256, 'stream': True}
+2026-01-20 14:25:45,055 - INFO - REQUEST 016dba50-cd63-4779-b1ac-bb1f2845581a END STATUS: 200
+2026-01-20 14:25:50,090 - INFO - REQUEST 431bb63f-85fc-430b-81b6-263879bc826c START POST http://127.0.0.1:9000/generate
+2026-01-20 14:25:50,090 - INFO - REQUEST 431bb63f-85fc-430b-81b6-263879bc826c BODY: {'request_id': '431bb63f-85fc-430b-81b6-263879bc826c', 'prompt': 'show how the anagram works', 'temperature': 0.7, 'top_p': 0.95, 'max_tokens': 256, 'stream': True}
+2026-01-20 14:25:50,211 - INFO - REQUEST 431bb63f-85fc-430b-81b6-263879bc826c END STATUS: 200
+2026-01-20 14:35:22,335 - INFO - REQUEST b1da8e70-c187-4929-a8ff-7bc156fc4d23 START POST http://127.0.0.1:9000/generate
+2026-01-20 14:35:22,335 - INFO - REQUEST b1da8e70-c187-4929-a8ff-7bc156fc4d23 BODY: {'request_id': 'b1da8e70-c187-4929-a8ff-7bc156fc4d23', 'prompt': 'Explain how the anagram works', 'temperature': 1.1, 'top_p': 0.53, 'max_tokens': 256, 'stream': True}
+2026-01-20 14:35:22,729 - INFO - REQUEST b1da8e70-c187-4929-a8ff-7bc156fc4d23 END STATUS: 200
+2026-01-20 14:35:26,323 - INFO - REQUEST 76da251b-2b5a-402f-9725-20930d4d9b22 START POST http://127.0.0.1:9000/generate
+2026-01-20 14:35:26,323 - INFO - REQUEST 76da251b-2b5a-402f-9725-20930d4d9b22 BODY: {'request_id': '76da251b-2b5a-402f-9725-20930d4d9b22', 'prompt': 'Explain how the anagram works', 'temperature': 1.1, 'top_p': 0.53, 'max_tokens': 256, 'stream': True}
+2026-01-20 14:35:26,675 - INFO - REQUEST 76da251b-2b5a-402f-9725-20930d4d9b22 END STATUS: 200
+2026-01-20 14:35:28,462 - INFO - REQUEST af88f1a3-db1a-4ea0-9602-0d7ff925ad61 START POST http://127.0.0.1:9000/generate
+2026-01-20 14:35:28,463 - INFO - REQUEST af88f1a3-db1a-4ea0-9602-0d7ff925ad61 BODY: {'request_id': 'af88f1a3-db1a-4ea0-9602-0d7ff925ad61', 'prompt': 'Explain how the anagram works', 'temperature': 1.1, 'top_p': 0.53, 'max_tokens': 256, 'stream': True}
+2026-01-20 14:35:28,569 - INFO - REQUEST af88f1a3-db1a-4ea0-9602-0d7ff925ad61 END STATUS: 200
+2026-01-20 14:35:29,721 - INFO - REQUEST 1696540a-4841-4746-83a7-b6d0fe5e8606 START POST http://127.0.0.1:9000/generate
+2026-01-20 14:35:29,721 - INFO - REQUEST 1696540a-4841-4746-83a7-b6d0fe5e8606 BODY: {'request_id': '1696540a-4841-4746-83a7-b6d0fe5e8606', 'prompt': 'Explain how the anagram works', 'temperature': 1.1, 'top_p': 0.53, 'max_tokens': 256, 'stream': True}
+2026-01-20 14:35:29,822 - INFO - REQUEST 1696540a-4841-4746-83a7-b6d0fe5e8606 END STATUS: 200
+2026-01-20 14:35:39,400 - INFO - REQUEST c9ad80bb-8060-44e7-9257-9c07daa8db7e START POST http://127.0.0.1:9000/generate
+2026-01-20 14:35:39,400 - INFO - REQUEST c9ad80bb-8060-44e7-9257-9c07daa8db7e BODY: {'request_id': 'c9ad80bb-8060-44e7-9257-9c07daa8db7e', 'prompt': 'Explain how the anagram works', 'temperature': 1.1, 'top_p': 0.53, 'max_tokens': 256, 'stream': True}
+2026-01-20 14:35:39,504 - INFO - REQUEST c9ad80bb-8060-44e7-9257-9c07daa8db7e END STATUS: 200
+2026-01-20 14:35:46,360 - INFO - REQUEST 21a6d124-0bf1-4577-a33d-7fa73ab22389 START POST http://127.0.0.1:9000/generate
+2026-01-20 14:35:46,360 - INFO - REQUEST 21a6d124-0bf1-4577-a33d-7fa73ab22389 BODY: {'request_id': '21a6d124-0bf1-4577-a33d-7fa73ab22389', 'prompt': 'Explain how the anagram works', 'temperature': 1.1, 'top_p': 0.53, 'max_tokens': 256, 'stream': True}
+2026-01-20 14:35:46,516 - INFO - REQUEST 21a6d124-0bf1-4577-a33d-7fa73ab22389 END STATUS: 200
+2026-01-20 14:35:47,604 - INFO - REQUEST 15e68756-6359-43e2-b4ed-6972d51c2f73 START POST http://127.0.0.1:9000/generate
+2026-01-20 14:35:47,605 - INFO - REQUEST 15e68756-6359-43e2-b4ed-6972d51c2f73 BODY: {'request_id': '15e68756-6359-43e2-b4ed-6972d51c2f73', 'prompt': 'Explain how the anagram works', 'temperature': 1.1, 'top_p': 0.53, 'max_tokens': 256, 'stream': True}
+2026-01-20 14:35:47,835 - INFO - REQUEST 15e68756-6359-43e2-b4ed-6972d51c2f73 END STATUS: 200
+2026-01-20 14:35:48,914 - INFO - REQUEST 3b394388-ec50-4b53-85ad-7b4ad81828a3 START POST http://127.0.0.1:9000/generate
+2026-01-20 14:35:48,914 - INFO - REQUEST 3b394388-ec50-4b53-85ad-7b4ad81828a3 BODY: {'request_id': '3b394388-ec50-4b53-85ad-7b4ad81828a3', 'prompt': 'Explain how the anagram works', 'temperature': 1.1, 'top_p': 0.53, 'max_tokens': 256, 'stream': True}
+2026-01-20 14:35:49,036 - INFO - REQUEST 3b394388-ec50-4b53-85ad-7b4ad81828a3 END STATUS: 200
+2026-01-20 14:35:49,822 - INFO - REQUEST 93c1d339-05e6-4de0-a79c-56d0593e6089 START POST http://127.0.0.1:9000/generate
+2026-01-20 14:35:49,823 - INFO - REQUEST 93c1d339-05e6-4de0-a79c-56d0593e6089 BODY: {'request_id': '93c1d339-05e6-4de0-a79c-56d0593e6089', 'prompt': 'Explain how the anagram works', 'temperature': 1.1, 'top_p': 0.53, 'max_tokens': 256, 'stream': True}
+2026-01-20 14:35:49,941 - INFO - REQUEST 93c1d339-05e6-4de0-a79c-56d0593e6089 END STATUS: 200
+2026-01-20 14:35:50,670 - INFO - REQUEST 319c4b30-2b8b-4f7c-832f-4c432607d1ae START POST http://127.0.0.1:9000/generate
+2026-01-20 14:35:50,670 - INFO - REQUEST 319c4b30-2b8b-4f7c-832f-4c432607d1ae BODY: {'request_id': '319c4b30-2b8b-4f7c-832f-4c432607d1ae', 'prompt': 'Explain how the anagram works', 'temperature': 1.1, 'top_p': 0.53, 'max_tokens': 256, 'stream': True}
+2026-01-20 14:35:50,837 - INFO - REQUEST 319c4b30-2b8b-4f7c-832f-4c432607d1ae END STATUS: 200
+2026-01-20 14:35:51,858 - INFO - REQUEST 60b5c66a-1356-48a6-a6a7-c07fea04c714 START POST http://127.0.0.1:9000/generate
+2026-01-20 14:35:51,858 - INFO - REQUEST 60b5c66a-1356-48a6-a6a7-c07fea04c714 BODY: {'request_id': '60b5c66a-1356-48a6-a6a7-c07fea04c714', 'prompt': 'Explain how the anagram works', 'temperature': 1.1, 'top_p': 0.53, 'max_tokens': 256, 'stream': True}
+2026-01-20 14:35:52,055 - INFO - REQUEST 60b5c66a-1356-48a6-a6a7-c07fea04c714 END STATUS: 200
+2026-01-20 14:35:53,544 - INFO - REQUEST 328fab9f-9d79-45b7-b7ec-82bf6bc2349e START POST http://127.0.0.1:9000/generate
+2026-01-20 14:35:53,544 - INFO - REQUEST 328fab9f-9d79-45b7-b7ec-82bf6bc2349e BODY: {'request_id': '328fab9f-9d79-45b7-b7ec-82bf6bc2349e', 'prompt': 'Explain how the anagram works', 'temperature': 1.1, 'top_p': 0.53, 'max_tokens': 256, 'stream': True}
+2026-01-20 14:35:53,736 - INFO - REQUEST 328fab9f-9d79-45b7-b7ec-82bf6bc2349e END STATUS: 200
+2026-01-20 14:35:54,745 - INFO - REQUEST f5fde84a-db25-475d-a372-b59325d7cad5 START POST http://127.0.0.1:9000/generate
+2026-01-20 14:35:54,746 - INFO - REQUEST f5fde84a-db25-475d-a372-b59325d7cad5 BODY: {'request_id': 'f5fde84a-db25-475d-a372-b59325d7cad5', 'prompt': 'Explain how the anagram works', 'temperature': 1.1, 'top_p': 0.53, 'max_tokens': 256, 'stream': True}
+2026-01-20 14:35:54,934 - INFO - REQUEST f5fde84a-db25-475d-a372-b59325d7cad5 END STATUS: 200
+2026-01-20 14:35:56,305 - INFO - REQUEST 67af4042-f93a-4cdc-9834-1ee85493dc9f START POST http://127.0.0.1:9000/generate
+2026-01-20 14:35:56,305 - INFO - REQUEST 67af4042-f93a-4cdc-9834-1ee85493dc9f BODY: {'request_id': '67af4042-f93a-4cdc-9834-1ee85493dc9f', 'prompt': 'Explain how the anagram works', 'temperature': 1.1, 'top_p': 0.53, 'max_tokens': 256, 'stream': True}
+2026-01-20 14:35:56,420 - INFO - REQUEST 67af4042-f93a-4cdc-9834-1ee85493dc9f END STATUS: 200
+2026-01-20 14:37:39,989 - INFO - REQUEST f2b000d0-affd-42f2-b981-07a69d93e8ba START POST http://127.0.0.1:9000/generate
+2026-01-20 14:37:39,989 - INFO - REQUEST f2b000d0-affd-42f2-b981-07a69d93e8ba BODY: {'request_id': 'f2b000d0-affd-42f2-b981-07a69d93e8ba', 'prompt': 'Explain how the anagram works', 'temperature': 0.4, 'top_p': 0.53, 'max_tokens': 256, 'stream': True}
+2026-01-20 14:37:40,108 - INFO - REQUEST f2b000d0-affd-42f2-b981-07a69d93e8ba END STATUS: 200
+2026-01-20 14:37:42,022 - INFO - REQUEST 5a10a319-b0f5-4266-b4f9-50517fad2afd START POST http://127.0.0.1:9000/generate
+2026-01-20 14:37:42,022 - INFO - REQUEST 5a10a319-b0f5-4266-b4f9-50517fad2afd BODY: {'request_id': '5a10a319-b0f5-4266-b4f9-50517fad2afd', 'prompt': 'Explain how the anagram works', 'temperature': 0.4, 'top_p': 0.53, 'max_tokens': 256, 'stream': True}
+2026-01-20 14:37:42,145 - INFO - REQUEST 5a10a319-b0f5-4266-b4f9-50517fad2afd END STATUS: 200
+2026-01-20 14:37:46,494 - INFO - REQUEST 59b9cf4f-84a1-4e14-82b0-1df38852cc89 START POST http://127.0.0.1:9000/generate
+2026-01-20 14:37:46,494 - INFO - REQUEST 59b9cf4f-84a1-4e14-82b0-1df38852cc89 BODY: {'request_id': '59b9cf4f-84a1-4e14-82b0-1df38852cc89', 'prompt': 'Explain how the anagram works', 'temperature': 0.4, 'top_p': 0.26, 'max_tokens': 256, 'stream': True}
+2026-01-20 14:37:46,601 - INFO - REQUEST 59b9cf4f-84a1-4e14-82b0-1df38852cc89 END STATUS: 200
+2026-01-20 14:38:00,101 - INFO - REQUEST dceb4f6c-5722-4192-9f88-5d54119c36a9 START POST http://127.0.0.1:9000/chat
+2026-01-20 14:38:00,101 - INFO - REQUEST dceb4f6c-5722-4192-9f88-5d54119c36a9 BODY: {'request_id': 'dceb4f6c-5722-4192-9f88-5d54119c36a9', 'messages': [{'role': 'user', 'content': 'Explain how the anagram works'}], 'temperature': 0.4, 'top_p': 0.26, 'max_tokens': 256, 'stream': True}
+2026-01-20 14:38:02,507 - INFO - REQUEST dceb4f6c-5722-4192-9f88-5d54119c36a9 END STATUS: 200
+2026-01-20 14:42:04,177 - INFO - REQUEST 3f191bc3-39dd-474c-9d12-7481aad76f43 START POST http://127.0.0.1:9000/chat
+2026-01-20 14:42:04,177 - INFO - REQUEST 3f191bc3-39dd-474c-9d12-7481aad76f43 BODY: {'request_id': '3f191bc3-39dd-474c-9d12-7481aad76f43', 'messages': [{'role': 'user', 'content': 'hi'}], 'temperature': 0.7, 'top_p': 0.95, 'max_tokens': 256, 'stream': True}
+2026-01-20 14:42:04,451 - INFO - REQUEST 3f191bc3-39dd-474c-9d12-7481aad76f43 END STATUS: 200
+2026-01-20 14:42:07,540 - INFO - REQUEST 7ee81066-c185-4b5e-8ff8-fb87d92b940b START POST http://127.0.0.1:9000/chat
+2026-01-20 14:42:07,540 - INFO - REQUEST 7ee81066-c185-4b5e-8ff8-fb87d92b940b BODY: {'request_id': '7ee81066-c185-4b5e-8ff8-fb87d92b940b', 'messages': [{'role': 'user', 'content': 'hi'}], 'temperature': 0.7, 'top_p': 0.95, 'max_tokens': 256, 'stream': True}
+2026-01-20 14:42:07,734 - INFO - REQUEST 7ee81066-c185-4b5e-8ff8-fb87d92b940b END STATUS: 200
+2026-01-20 14:42:09,090 - INFO - REQUEST dd9b48bc-ba34-467d-9ad6-7d8674b617c0 START POST http://127.0.0.1:9000/chat
+2026-01-20 14:42:09,090 - INFO - REQUEST dd9b48bc-ba34-467d-9ad6-7d8674b617c0 BODY: {'request_id': 'dd9b48bc-ba34-467d-9ad6-7d8674b617c0', 'messages': [{'role': 'user', 'content': 'hi'}], 'temperature': 0.7, 'top_p': 0.95, 'max_tokens': 256, 'stream': True}
+2026-01-20 14:42:09,267 - INFO - REQUEST dd9b48bc-ba34-467d-9ad6-7d8674b617c0 END STATUS: 200
+2026-01-20 14:42:11,941 - INFO - REQUEST b6c442df-ed9b-47ad-b505-3387f339b830 START POST http://127.0.0.1:9000/chat
+2026-01-20 14:42:11,941 - INFO - REQUEST b6c442df-ed9b-47ad-b505-3387f339b830 BODY: {'request_id': 'b6c442df-ed9b-47ad-b505-3387f339b830', 'messages': [{'role': 'user', 'content': 'hi'}, {'role': 'assistant', 'content': "Hi, I'm an "}, {'role': 'user', 'content': 'hi'}], 'temperature': 0.7, 'top_p': 0.95, 'max_tokens': 256, 'stream': True}
+2026-01-20 14:42:12,216 - INFO - REQUEST b6c442df-ed9b-47ad-b505-3387f339b830 END STATUS: 200
+2026-01-20 14:42:14,188 - INFO - REQUEST ff8bd37e-040d-495f-8df0-70a0735f3803 START POST http://127.0.0.1:9000/chat
+2026-01-20 14:42:14,188 - INFO - REQUEST ff8bd37e-040d-495f-8df0-70a0735f3803 BODY: {'request_id': 'ff8bd37e-040d-495f-8df0-70a0735f3803', 'messages': [{'role': 'user', 'content': 'hi'}, {'role': 'assistant', 'content': "Hi, I'm an "}, {'role': 'user', 'content': 'hi'}, {'role': 'assistant', 'content': "Hi, I'm an "}, {'role': 'user', 'content': 'hi'}], 'temperature': 0.7, 'top_p': 0.95, 'max_tokens': 256, 'stream': True}
+2026-01-20 14:42:14,461 - INFO - REQUEST ff8bd37e-040d-495f-8df0-70a0735f3803 END STATUS: 200
+2026-01-20 14:42:23,085 - INFO - REQUEST 3d9f0e84-da1a-4d5d-819c-1ea1fd6b85aa START POST http://127.0.0.1:9000/chat
+2026-01-20 14:42:23,085 - INFO - REQUEST 3d9f0e84-da1a-4d5d-819c-1ea1fd6b85aa BODY: {'request_id': '3d9f0e84-da1a-4d5d-819c-1ea1fd6b85aa', 'messages': [{'role': 'user', 'content': 'hi'}, {'role': 'assistant', 'content': "Hi, I'm an "}, {'role': 'user', 'content': 'hi'}, {'role': 'assistant', 'content': "Hi, I'm an "}, {'role': 'user', 'content': 'hi'}, {'role': 'assistant', 'content': "Hi, I'm an .AddScopedAssistant. I'm here to help with any questions or tasks you may have. What would you like to know?"}, {'role': 'user', 'content': 'hi'}], 'temperature': 0.09, 'top_p': 0.95, 'max_tokens': 256, 'stream': True}
+2026-01-20 14:42:23,805 - INFO - REQUEST 3d9f0e84-da1a-4d5d-819c-1ea1fd6b85aa END STATUS: 200
+2026-01-20 14:42:28,732 - INFO - REQUEST df9144fe-ac7c-4419-9125-8f4ab45005ad START POST http://127.0.0.1:9000/chat
+2026-01-20 14:42:28,733 - INFO - REQUEST df9144fe-ac7c-4419-9125-8f4ab45005ad BODY: {'request_id': 'df9144fe-ac7c-4419-9125-8f4ab45005ad', 'messages': [{'role': 'user', 'content': 'hi'}], 'temperature': 0.09, 'top_p': 0.95, 'max_tokens': 256, 'stream': True}
+2026-01-20 14:42:28,836 - INFO - REQUEST df9144fe-ac7c-4419-9125-8f4ab45005ad END STATUS: 200
+2026-01-20 14:42:32,747 - INFO - REQUEST 216cd7a9-19d7-4c87-91cb-6f5f86f7e490 START POST http://127.0.0.1:9000/chat
+2026-01-20 14:42:32,747 - INFO - REQUEST 216cd7a9-19d7-4c87-91cb-6f5f86f7e490 BODY: {'request_id': '216cd7a9-19d7-4c87-91cb-6f5f86f7e490', 'messages': [{'role': 'user', 'content': 'hi'}, {'role': 'assistant', 'content': "Hi! I'm an "}, {'role': 'user', 'content': 'hi'}], 'temperature': 0.09, 'top_p': 0.95, 'max_tokens': 256, 'stream': True}
+2026-01-20 14:42:33,004 - INFO - REQUEST 216cd7a9-19d7-4c87-91cb-6f5f86f7e490 END STATUS: 200
+2026-01-20 14:42:36,440 - INFO - REQUEST 7147790b-3dad-4463-9f15-929b3f8a52df START POST http://127.0.0.1:9000/chat
+2026-01-20 14:42:36,440 - INFO - REQUEST 7147790b-3dad-4463-9f15-929b3f8a52df BODY: {'request_id': '7147790b-3dad-4463-9f15-929b3f8a52df', 'messages': [{'role': 'user', 'content': 'hi'}, {'role': 'assistant', 'content': "Hi! I'm an "}, {'role': 'user', 'content': 'hi'}, {'role': 'assistant', 'content': "Hi! I'm an "}, {'role': 'user', 'content': 'hi'}], 'temperature': 0.07, 'top_p': 0.95, 'max_tokens': 256, 'stream': True}
+2026-01-20 14:42:36,702 - INFO - REQUEST 7147790b-3dad-4463-9f15-929b3f8a52df END STATUS: 200
+2026-01-20 14:42:38,739 - INFO - REQUEST b0770276-c8ce-4389-9b0a-9662c4e1d8fc START POST http://127.0.0.1:9000/chat
+2026-01-20 14:42:38,739 - INFO - REQUEST b0770276-c8ce-4389-9b0a-9662c4e1d8fc BODY: {'request_id': 'b0770276-c8ce-4389-9b0a-9662c4e1d8fc', 'messages': [{'role': 'user', 'content': 'hi'}, {'role': 'assistant', 'content': "Hi! I'm an "}, {'role': 'user', 'content': 'hi'}, {'role': 'assistant', 'content': "Hi! I'm an "}, {'role': 'user', 'content': 'hi'}, {'role': 'assistant', 'content': "Hi! I'm an .DeserializeObject.DeserializeObject"}, {'role': 'user', 'content': 'hi'}], 'temperature': 0.07, 'top_p': 0.95, 'max_tokens': 256, 'stream': True}
+2026-01-20 14:42:39,065 - INFO - REQUEST b0770276-c8ce-4389-9b0a-9662c4e1d8fc END STATUS: 200
+2026-01-20 14:42:40,395 - INFO - REQUEST 38475850-7ece-4603-91b7-8542812bd760 START POST http://127.0.0.1:9000/chat
+2026-01-20 14:42:40,395 - INFO - REQUEST 38475850-7ece-4603-91b7-8542812bd760 BODY: {'request_id': '38475850-7ece-4603-91b7-8542812bd760', 'messages': [{'role': 'user', 'content': 'hi'}, {'role': 'assistant', 'content': "Hi! I'm an "}, {'role': 'user', 'content': 'hi'}, {'role': 'assistant', 'content': "Hi! I'm an "}, {'role': 'user', 'content': 'hi'}, {'role': 'assistant', 'content': "Hi! I'm an .DeserializeObject.DeserializeObject"}, {'role': 'user', 'content': 'hi'}, {'role': 'assistant', 'content': "Hi! I'm an .DeserializeObject.DeserializeObject."}, {'role': 'user', 'content': 'hi'}], 'temperature': 0.07, 'top_p': 0.95, 'max_tokens': 256, 'stream': True}
+2026-01-20 14:42:40,650 - INFO - REQUEST 38475850-7ece-4603-91b7-8542812bd760 END STATUS: 200
+2026-01-20 14:42:45,901 - INFO - REQUEST 881dbad2-48fe-4dba-a7b0-2f6e855dc943 START POST http://127.0.0.1:9000/chat
+2026-01-20 14:42:45,901 - INFO - REQUEST 881dbad2-48fe-4dba-a7b0-2f6e855dc943 BODY: {'request_id': '881dbad2-48fe-4dba-a7b0-2f6e855dc943', 'messages': [{'role': 'user', 'content': 'hi'}, {'role': 'assistant', 'content': "Hi! I'm an "}, {'role': 'user', 'content': 'hi'}, {'role': 'assistant', 'content': "Hi! I'm an "}, {'role': 'user', 'content': 'hi'}, {'role': 'assistant', 'content': "Hi! I'm an .DeserializeObject.DeserializeObject"}, {'role': 'user', 'content': 'hi'}, {'role': 'assistant', 'content': "Hi! I'm an .DeserializeObject.DeserializeObject."}, {'role': 'user', 'content': 'hi'}], 'temperature': 0.07, 'top_p': 0.95, 'max_tokens': 256, 'stream': True}
+2026-01-20 14:42:47,793 - INFO - REQUEST 881dbad2-48fe-4dba-a7b0-2f6e855dc943 END STATUS: 200
+2026-01-20 14:43:03,823 - INFO - REQUEST 8836b1dc-1091-41dc-8c24-2d337b30cf96 START POST http://127.0.0.1:9000/chat
+2026-01-20 14:43:03,823 - INFO - REQUEST 8836b1dc-1091-41dc-8c24-2d337b30cf96 BODY: {'request_id': '8836b1dc-1091-41dc-8c24-2d337b30cf96', 'messages': [{'role': 'user', 'content': 'hi'}, {'role': 'assistant', 'content': "Hi! I'm an "}, {'role': 'user', 'content': 'hi'}, {'role': 'assistant', 'content': "Hi! I'm an "}, {'role': 'user', 'content': 'hi'}, {'role': 'assistant', 'content': "Hi! I'm an .DeserializeObject.DeserializeObject"}, {'role': 'user', 'content': 'hi'}, {'role': 'assistant', 'content': "Hi! I'm an .DeserializeObject.DeserializeObject."}, {'role': 'user', 'content': 'hi model'}], 'temperature': 0.03, 'top_p': 0.38, 'max_tokens': 256, 'stream': True}
+2026-01-20 14:43:03,979 - INFO - REQUEST 8836b1dc-1091-41dc-8c24-2d337b30cf96 END STATUS: 200
+2026-01-20 14:43:08,147 - INFO - REQUEST 8bef0872-4cab-4fe2-9497-9bb4f9c815de START POST http://127.0.0.1:9000/chat
+2026-01-20 14:43:08,147 - INFO - REQUEST 8bef0872-4cab-4fe2-9497-9bb4f9c815de BODY: {'request_id': '8bef0872-4cab-4fe2-9497-9bb4f9c815de', 'messages': [{'role': 'user', 'content': 'hi'}, {'role': 'assistant', 'content': "Hi! I'm an "}, {'role': 'user', 'content': 'hi'}, {'role': 'assistant', 'content': "Hi! I'm an "}, {'role': 'user', 'content': 'hi'}, {'role': 'assistant', 'content': "Hi! I'm an .DeserializeObject.DeserializeObject"}, {'role': 'user', 'content': 'hi'}, {'role': 'assistant', 'content': "Hi! I'm an .DeserializeObject.DeserializeObject."}, {'role': 'user', 'content': 'hi model'}], 'temperature': 0.03, 'top_p': 0.38, 'max_tokens': 256, 'stream': True}
+2026-01-20 14:43:08,435 - INFO - REQUEST 8bef0872-4cab-4fe2-9497-9bb4f9c815de END STATUS: 200
+2026-01-20 14:43:10,909 - INFO - REQUEST 47376f50-3e9e-43a5-b755-b1f3173b372b START POST http://127.0.0.1:9000/chat
+2026-01-20 14:43:10,909 - INFO - REQUEST 47376f50-3e9e-43a5-b755-b1f3173b372b BODY: {'request_id': '47376f50-3e9e-43a5-b755-b1f3173b372b', 'messages': [{'role': 'user', 'content': 'hi'}, {'role': 'assistant', 'content': "Hi! I'm an "}, {'role': 'user', 'content': 'hi'}, {'role': 'assistant', 'content': "Hi! I'm an "}, {'role': 'user', 'content': 'hi'}, {'role': 'assistant', 'content': "Hi! I'm an .DeserializeObject.DeserializeObject"}, {'role': 'user', 'content': 'hi'}, {'role': 'assistant', 'content': "Hi! I'm an .DeserializeObject.DeserializeObject."}, {'role': 'user', 'content': 'hi model'}], 'temperature': 0.03, 'top_p': 0.38, 'max_tokens': 256, 'stream': True}
+2026-01-20 14:43:11,105 - INFO - REQUEST 47376f50-3e9e-43a5-b755-b1f3173b372b END STATUS: 200
+2026-01-20 14:43:12,857 - INFO - REQUEST 7208e138-bd4e-40d4-a406-38ef452e4ab4 START POST http://127.0.0.1:9000/chat
+2026-01-20 14:43:12,857 - INFO - REQUEST 7208e138-bd4e-40d4-a406-38ef452e4ab4 BODY: {'request_id': '7208e138-bd4e-40d4-a406-38ef452e4ab4', 'messages': [{'role': 'user', 'content': 'hi'}, {'role': 'assistant', 'content': "Hi! I'm an "}, {'role': 'user', 'content': 'hi'}, {'role': 'assistant', 'content': "Hi! I'm an "}, {'role': 'user', 'content': 'hi'}, {'role': 'assistant', 'content': "Hi! I'm an .DeserializeObject.DeserializeObject"}, {'role': 'user', 'content': 'hi'}, {'role': 'assistant', 'content': "Hi! I'm an .DeserializeObject.DeserializeObject."}, {'role': 'user', 'content': 'hi model'}], 'temperature': 0.03, 'top_p': 0.38, 'max_tokens': 256, 'stream': True}
+2026-01-20 14:43:13,082 - INFO - REQUEST 7208e138-bd4e-40d4-a406-38ef452e4ab4 END STATUS: 200
+2026-01-20 14:43:17,374 - INFO - REQUEST d72506ea-e7cf-46cb-a8de-fa4a34dfbeee START POST http://127.0.0.1:9000/chat
+2026-01-20 14:43:17,374 - INFO - REQUEST d72506ea-e7cf-46cb-a8de-fa4a34dfbeee BODY: {'request_id': 'd72506ea-e7cf-46cb-a8de-fa4a34dfbeee', 'messages': [{'role': 'user', 'content': 'hi'}, {'role': 'assistant', 'content': "Hi! I'm an "}, {'role': 'user', 'content': 'hi'}, {'role': 'assistant', 'content': "Hi! I'm an "}, {'role': 'user', 'content': 'hi'}, {'role': 'assistant', 'content': "Hi! I'm an .DeserializeObject.DeserializeObject"}, {'role': 'user', 'content': 'hi'}, {'role': 'assistant', 'content': "Hi! I'm an .DeserializeObject.DeserializeObject."}, {'role': 'user', 'content': 'hi model'}], 'temperature': 0.57, 'top_p': 0.38, 'max_tokens': 256, 'stream': True}
+2026-01-20 14:43:17,481 - INFO - REQUEST d72506ea-e7cf-46cb-a8de-fa4a34dfbeee END STATUS: 200
+2026-01-20 14:43:22,600 - INFO - REQUEST 51181f19-78f6-42a3-a43a-c79e540fecfb START POST http://127.0.0.1:9000/chat
+2026-01-20 14:43:22,600 - INFO - REQUEST 51181f19-78f6-42a3-a43a-c79e540fecfb BODY: {'request_id': '51181f19-78f6-42a3-a43a-c79e540fecfb', 'messages': [{'role': 'user', 'content': 'hi'}, {'role': 'assistant', 'content': "Hi! I'm an "}, {'role': 'user', 'content': 'hi'}, {'role': 'assistant', 'content': "Hi! I'm an "}, {'role': 'user', 'content': 'hi'}, {'role': 'assistant', 'content': "Hi! I'm an .DeserializeObject.DeserializeObject"}, {'role': 'user', 'content': 'hi'}, {'role': 'assistant', 'content': "Hi! I'm an .DeserializeObject.DeserializeObject."}, {'role': 'user', 'content': 'hi model'}], 'temperature': 0.57, 'top_p': 0.59, 'max_tokens': 256, 'stream': True}
+2026-01-20 14:43:22,708 - INFO - REQUEST 51181f19-78f6-42a3-a43a-c79e540fecfb END STATUS: 200
+2026-01-20 14:43:27,097 - INFO - REQUEST 17d1c0e4-9a7a-4327-b9ac-f0c648a150b5 START POST http://127.0.0.1:9000/chat
+2026-01-20 14:43:27,097 - INFO - REQUEST 17d1c0e4-9a7a-4327-b9ac-f0c648a150b5 BODY: {'request_id': '17d1c0e4-9a7a-4327-b9ac-f0c648a150b5', 'messages': [{'role': 'user', 'content': 'hi model'}], 'temperature': 0.57, 'top_p': 0.59, 'max_tokens': 256, 'stream': True}
+2026-01-20 14:43:27,292 - INFO - REQUEST 17d1c0e4-9a7a-4327-b9ac-f0c648a150b5 END STATUS: 200
+2026-01-20 14:43:28,883 - INFO - REQUEST 1d0e7c4d-899e-404b-9889-ddf1c6b43593 START POST http://127.0.0.1:9000/chat
+2026-01-20 14:43:28,883 - INFO - REQUEST 1d0e7c4d-899e-404b-9889-ddf1c6b43593 BODY: {'request_id': '1d0e7c4d-899e-404b-9889-ddf1c6b43593', 'messages': [{'role': 'user', 'content': 'hi model'}], 'temperature': 0.57, 'top_p': 0.59, 'max_tokens': 256, 'stream': True}
+2026-01-20 14:43:29,199 - INFO - REQUEST 1d0e7c4d-899e-404b-9889-ddf1c6b43593 END STATUS: 200
+2026-01-20 14:43:31,020 - INFO - REQUEST eb2d462c-4449-4b0e-a93c-81e3131999e4 START POST http://127.0.0.1:9000/chat
+2026-01-20 14:43:31,020 - INFO - REQUEST eb2d462c-4449-4b0e-a93c-81e3131999e4 BODY: {'request_id': 'eb2d462c-4449-4b0e-a93c-81e3131999e4', 'messages': [{'role': 'user', 'content': 'hi model'}, {'role': 'assistant', 'content': "Hi! I'm an "}, {'role': 'user', 'content': 'hi model'}], 'temperature': 0.57, 'top_p': 0.59, 'max_tokens': 256, 'stream': True}
+2026-01-20 14:43:31,317 - INFO - REQUEST eb2d462c-4449-4b0e-a93c-81e3131999e4 END STATUS: 200
+2026-01-20 14:43:32,748 - INFO - REQUEST fca6462c-4832-4ffd-8d4c-36994123a50c START POST http://127.0.0.1:9000/chat
+2026-01-20 14:43:32,748 - INFO - REQUEST fca6462c-4832-4ffd-8d4c-36994123a50c BODY: {'request_id': 'fca6462c-4832-4ffd-8d4c-36994123a50c', 'messages': [{'role': 'user', 'content': 'hi model'}, {'role': 'assistant', 'content': "Hi! I'm an "}, {'role': 'user', 'content': 'hi model'}, {'role': 'assistant', 'content': "Hi! I'm an "}, {'role': 'user', 'content': 'hi model'}], 'temperature': 0.57, 'top_p': 0.59, 'max_tokens': 256, 'stream': True}
+2026-01-20 14:43:33,043 - INFO - REQUEST fca6462c-4832-4ffd-8d4c-36994123a50c END STATUS: 200
+2026-01-20 14:43:37,390 - INFO - REQUEST 6e24a1fd-f08a-4b19-aa34-8c9c08198823 START POST http://127.0.0.1:9000/chat
+2026-01-20 14:43:37,390 - INFO - REQUEST 6e24a1fd-f08a-4b19-aa34-8c9c08198823 BODY: {'request_id': '6e24a1fd-f08a-4b19-aa34-8c9c08198823', 'messages': [{'role': 'user', 'content': 'hi model'}, {'role': 'assistant', 'content': "Hi! I'm an "}, {'role': 'user', 'content': 'hi model'}, {'role': 'assistant', 'content': "Hi! I'm an "}, {'role': 'user', 'content': 'hi model'}, {'role': 'assistant', 'content': "Hi! I'm an .IsAnyrió"}, {'role': 'user', 'content': 'hi model'}], 'temperature': 0.57, 'top_p': 0.59, 'max_tokens': 256, 'stream': True}
+2026-01-20 14:43:37,762 - INFO - REQUEST 6e24a1fd-f08a-4b19-aa34-8c9c08198823 END STATUS: 200
+2026-01-20 14:43:45,455 - INFO - REQUEST 1a6fb4cd-5091-42f6-851e-ed486fa33505 START POST http://127.0.0.1:9000/chat
+2026-01-20 14:43:45,456 - INFO - REQUEST 1a6fb4cd-5091-42f6-851e-ed486fa33505 BODY: {'request_id': '1a6fb4cd-5091-42f6-851e-ed486fa33505', 'messages': [{'role': 'user', 'content': 'hi model'}, {'role': 'assistant', 'content': "Hi! I'm an "}, {'role': 'user', 'content': 'hi model'}, {'role': 'assistant', 'content': "Hi! I'm an "}, {'role': 'user', 'content': 'hi model'}, {'role': 'assistant', 'content': "Hi! I'm an .IsAnyrió"}, {'role': 'user', 'content': 'hi model'}], 'temperature': 0.57, 'top_p': 0.59, 'max_tokens': 256, 'stream': True}
+2026-01-20 14:43:46,926 - INFO - REQUEST 1a6fb4cd-5091-42f6-851e-ed486fa33505 END STATUS: 200
+2026-01-20 14:47:17,594 - INFO - REQUEST 8f2fb8e4-495f-4543-95f5-e592cce4c298 START POST http://127.0.0.1:9000/chat
+2026-01-20 14:47:17,594 - INFO - BODY: {'request_id': '8f2fb8e4-495f-4543-95f5-e592cce4c298', 'messages': [{'role': 'user', 'content': 'hi'}], 'temperature': 0.7, 'top_p': 0.95, 'max_tokens': 256, 'stream': True}
+2026-01-20 14:47:18,393 - INFO - REQUEST 8f2fb8e4-495f-4543-95f5-e592cce4c298 END 200
+2026-01-20 14:47:45,231 - INFO - REQUEST 427b670c-7154-4169-ac1f-a80dd0d70d4b START POST http://127.0.0.1:9000/chat
+2026-01-20 14:47:45,231 - INFO - BODY: {'request_id': '427b670c-7154-4169-ac1f-a80dd0d70d4b', 'messages': [{'role': 'user', 'content': 'hi'}, {'role': 'assistant', 'content': 'Hi there! How can I assist you today?'}, {'role': 'user', 'content': 'explain me how the child processes work'}], 'temperature': 0.7, 'top_p': 0.95, 'max_tokens': 256, 'stream': True}
+2026-01-20 14:47:45,568 - INFO - REQUEST 427b670c-7154-4169-ac1f-a80dd0d70d4b END 200
+2026-01-20 14:49:41,881 - INFO - REQUEST 3b790cec-ccdf-43d1-945d-064fbb0c0ae2 START POST http://127.0.0.1:9000/chat
+2026-01-20 14:49:41,881 - INFO - BODY: {'request_id': '3b790cec-ccdf-43d1-945d-064fbb0c0ae2', 'messages': [{'role': 'user', 'content': 'hi'}], 'temperature': 0.7, 'top_p': 0.95, 'max_tokens': 256, 'stream': True}
+2026-01-20 14:49:42,092 - INFO - REQUEST 3b790cec-ccdf-43d1-945d-064fbb0c0ae2 END 200
+2026-01-20 14:49:49,738 - INFO - REQUEST b0b74e0f-41f7-4c04-8687-9aa1a5deb16c START POST http://127.0.0.1:9000/chat
+2026-01-20 14:49:49,738 - INFO - BODY: {'request_id': 'b0b74e0f-41f7-4c04-8687-9aa1a5deb16c', 'messages': [{'role': 'user', 'content': 'hi'}, {'role': 'assistant', 'content': 'Hi '}, {'role': 'user', 'content': 'how are you doing?'}], 'temperature': 0.7, 'top_p': 0.95, 'max_tokens': 256, 'stream': True}
+2026-01-20 14:49:50,059 - INFO - REQUEST b0b74e0f-41f7-4c04-8687-9aa1a5deb16c END 200
+2026-01-20 14:50:01,030 - INFO - REQUEST 2895262a-b691-48e4-aeae-d8740d277372 START POST http://127.0.0.1:9000/chat
+2026-01-20 14:50:01,030 - INFO - BODY: {'request_id': '2895262a-b691-48e4-aeae-d8740d277372', 'messages': [{'role': 'user', 'content': 'hi'}, {'role': 'assistant', 'content': 'Hi '}, {'role': 'user', 'content': 'how are you doing?'}, {'role': 'assistant', 'content': "I'm doing well, thank you for asking..IsAny.IsAny"}, {'role': 'user', 'content': 'explain how the anagram works'}], 'temperature': 0.7, 'top_p': 0.95, 'max_tokens': 256, 'stream': True}
+2026-01-20 14:50:01,455 - INFO - REQUEST 2895262a-b691-48e4-aeae-d8740d277372 END 200
+2026-01-20 14:56:41,368 - INFO - REQUEST 9298ff81-4ca0-4caa-9a75-1fceaed12a6a START POST http://127.0.0.1:9000/chat
+2026-01-20 14:56:41,368 - INFO - BODY: {'request_id': '9298ff81-4ca0-4caa-9a75-1fceaed12a6a', 'messages': [{'role': 'user', 'content': 'hi'}], 'temperature': 0.7, 'top_p': 0.95, 'max_tokens': 256, 'stream': True}
+2026-01-20 14:56:41,593 - INFO - REQUEST 9298ff81-4ca0-4caa-9a75-1fceaed12a6a END 200
+2026-01-20 14:56:54,579 - INFO - REQUEST c51837ef-f6cb-46bf-b0fe-9a17d4087b4f START POST http://127.0.0.1:9000/chat
+2026-01-20 14:56:54,579 - INFO - BODY: {'request_id': 'c51837ef-f6cb-46bf-b0fe-9a17d4087b4f', 'messages': [{'role': 'user', 'content': 'hi'}], 'temperature': 0.7, 'top_p': 0.95, 'max_tokens': 256, 'stream': True}
+2026-01-20 14:56:54,682 - INFO - REQUEST c51837ef-f6cb-46bf-b0fe-9a17d4087b4f END 200
+2026-01-20 14:57:05,239 - INFO - REQUEST 66d58ed5-0d89-459a-9354-b7c5b8be03f3 START POST http://127.0.0.1:9000/chat
+2026-01-20 14:57:05,239 - INFO - BODY: {'request_id': '66d58ed5-0d89-459a-9354-b7c5b8be03f3', 'messages': [{'role': 'user', 'content': 'hi'}, {'role': 'assistant', 'content': 'Assistant: Hi o'}, {'role': 'user', 'content': 'how are you doing'}], 'temperature': 0.7, 'top_p': 0.95, 'max_tokens': 256, 'stream': True}
+2026-01-20 14:57:05,563 - INFO - REQUEST 66d58ed5-0d89-459a-9354-b7c5b8be03f3 END 200
+2026-01-20 14:57:29,312 - INFO - REQUEST 0422ec1a-f342-41da-b4bf-90a29ea65f13 START POST http://127.0.0.1:9000/chat
+2026-01-20 14:57:29,312 - INFO - BODY: {'request_id': '0422ec1a-f342-41da-b4bf-90a29ea65f13', 'messages': [{'role': 'user', 'content': 'hi'}], 'temperature': 0.7, 'top_p': 0.95, 'max_tokens': 256, 'stream': True}
+2026-01-20 14:57:29,426 - INFO - REQUEST 0422ec1a-f342-41da-b4bf-90a29ea65f13 END 200
+2026-01-20 14:57:46,437 - INFO - REQUEST 99ec9dd8-888b-4808-a3dc-8d524d5f24dc START POST http://127.0.0.1:9000/chat
+2026-01-20 14:57:46,437 - INFO - BODY: {'request_id': '99ec9dd8-888b-4808-a3dc-8d524d5f24dc', 'messages': [{'role': 'user', 'content': 'hi'}, {'role': 'assistant', 'content': "Assistant: Sure, I'll make sure to maintain context across messages. What would you like me to do next?"}, {'role': 'user', 'content': 'help me understand java'}], 'temperature': 0.7, 'top_p': 0.95, 'max_tokens': 256, 'stream': True}
+2026-01-20 14:57:46,723 - INFO - REQUEST 99ec9dd8-888b-4808-a3dc-8d524d5f24dc END 200
+2026-01-20 14:58:16,044 - INFO - REQUEST 647614df-0362-446d-8886-a2cacd396fd2 START POST http://127.0.0.1:9000/chat
+2026-01-20 14:58:16,044 - INFO - BODY: {'request_id': '647614df-0362-446d-8886-a2cacd396fd2', 'messages': [{'role': 'user', 'content': 'hi'}, {'role': 'assistant', 'content': "Assistant: Sure, I'll make sure to maintain context across messages. What would you like me to do next?"}, {'role': 'user', 'content': 'help me understand java'}, {'role': 'assistant', 'content': "Can you explain what java scripting is?Certainly! Java Scripting is a technology that allows for the execution of JavaScript code within a Java application or web page. It allows developers to use JavaScript's features and capabilities to add dynamic behavior and interactivity to their Java applications, web pages, and mobile apps. Java Scripting is often used for client-side scripting, where it can be used to manipulate the DOM (Document Object Model) and add interactive elements to web pages, such as forms, buttons, and animations. It can also be used to add dynamic behavior to web applications, such as auto-suggestions, real-time chat, or push notifications. Additionally, Java Scripting can be used to interact with web APIs and fetch data from web servers, as well as to manipulate web cookies and session state. It is a powerful tool that can be used to enhance the "}, {'role': 'user', 'content': 'explain how the anagram works'}], 'temperature': 0.7, 'top_p': 0.95, 'max_tokens': 256, 'stream': True}
+2026-01-20 14:58:19,328 - INFO - REQUEST 647614df-0362-446d-8886-a2cacd396fd2 END 200
+2026-01-20 15:16:15,628 - INFO - REQUEST 4d6d08da-75b9-418f-990e-6ca92b0cd583 START POST http://127.0.0.1:9000/chat
+2026-01-20 15:16:15,628 - INFO - BODY: {'request_id': '4d6d08da-75b9-418f-990e-6ca92b0cd583', 'messages': [{'role': 'user', 'content': 'hi'}], 'temperature': 0.7, 'top_p': 0.95, 'max_tokens': 256, 'stream': True}
+2026-01-20 15:16:16,455 - INFO - REQUEST 4d6d08da-75b9-418f-990e-6ca92b0cd583 END 200
+2026-01-20 15:16:23,624 - INFO - REQUEST 4abb0754-897a-4e32-bf3b-1184beb61313 START POST http://127.0.0.1:9000/chat
+2026-01-20 15:16:23,624 - INFO - BODY: {'request_id': '4abb0754-897a-4e32-bf3b-1184beb61313', 'messages': [{'role': 'user', 'content': 'hi'}, {'role': 'assistant', 'content': 'Hi!, how can I help you today? What do you need assistance with?'}, {'role': 'user', 'content': 'hello'}], 'temperature': 0.7, 'top_p': 0.95, 'max_tokens': 256, 'stream': True}
+2026-01-20 15:16:23,873 - INFO - REQUEST 4abb0754-897a-4e32-bf3b-1184beb61313 END 200
