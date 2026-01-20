@@ -1,0 +1,12 @@
+{
+  "prompts": [
+    "Explain overfitting in simple terms.",
+    "Explain underfitting in simple terms.",
+    "Explain regularization in simple terms."
+  ],
+  "references": [
+    "Overfitting is when a model learns training data too well and performs poorly on new data.",
+    "Underfitting is when a model is too simple and cannot learn patterns from the data.",
+    "Regularization is a technique used to reduce model complexity and prevent overfitting."
+  ]
+}
