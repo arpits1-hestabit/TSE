@@ -1,7 +1,7 @@
 from autogen_agentchat.agents import AssistantAgent
 from autogen_agentchat.tools import AgentTool
 from autogen_core.memory import ListMemory
-from agents.model_client import get_llama_model
+from model_client import get_llama_model
  
 answer_memory = ListMemory()
 

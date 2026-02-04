@@ -1,10 +1,10 @@
 import asyncio
 from autogen_core import CancellationToken
 from autogen_agentchat.messages import TextMessage
-from agents import research_agent as ra, summarizer_agent as sa, answer_agent as aa
+from Agents import research_agent as ra, summarizer_agent as sa, answer_agent as aa
 
 async def main():
-    user_query = "What is machine learning and how is it used?"
+    user_query = input("Enter your query: ")
     cancellation = CancellationToken()
 
     print(f"User_query: {user_query}\n")
