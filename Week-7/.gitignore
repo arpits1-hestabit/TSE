@@ -5,3 +5,7 @@ __init__.py
 src/vectorstore/
 tmp/
 sales.db
+config.dev.yaml
+config.prod.yaml
+
+

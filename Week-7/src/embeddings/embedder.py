@@ -3,7 +3,11 @@ import numpy as np
 import os
 import logging
 import time
-from sentence_transformers import SentenceTransformer
+from src.config.config import get_config
+from src.utils.logger import get_logger
+from src.utils.errors import EmbeddingError
+
+logger = get_logger(__name__)
 
 CHUNKS_FILE = "src/data/chunks/text_chunks.jsonl"
 OUT_EMB = "src/data/chunks/embeddings.npy"
@@ -24,6 +28,31 @@ logging.basicConfig(
 )
 
 logger = logging.getLogger(__name__)
+
+class Embedder:
+    def __init__(self):
+        self.config = get_config()
+        self.model_name = self.config.embedding_model
+        self.dimension = self.config.get('embeddings.dimension', 384)
+        self.model = self._load_model()
+    
+    def _load_model(self):
+        """Load embedding model from config"""
+        try:
+            from sentence_transformers import SentenceTransformer
+            logger.info(f"Loading embedder: {self.model_name}")
+            return SentenceTransformer(self.model_name)
+        except Exception as e:
+            logger.error(f"Error loading embedder: {e}")
+            raise EmbeddingError(f"Cannot load {self.model_name}: {str(e)}")
+    
+    def encode(self, texts):
+        """Encode texts to embeddings"""
+        try:
+            return self.model.encode(texts, convert_to_numpy=True)
+        except Exception as e:
+            logger.error(f"Encoding error: {e}")
+            raise EmbeddingError(f"Encoding failed: {str(e)}")
 
 def generate_embeddings():
     start_time = time.time()
