@@ -1,69 +1,115 @@
-// components/ui/Sidebar.jsx
+"use client";
+
 import Link from "next/link";
 import {
-    FaTachometerAlt,
-    FaLayerGroup,
-    FaFileAlt,
-    FaChartBar,
-    FaTable,
+  FaTachometerAlt,
+  FaLayerGroup,
+  FaFileAlt,
+  FaChartBar,
+  FaTable,
+  FaTimes,
 } from "react-icons/fa";
+import { useSidebar } from "@/context/SidebarContext";
 
 export default function Sidebar() {
-    return (
-        <aside className="bg-[#202529] text-white  min-w-[180px] max-w-[16rem] w-full">
+  const { isOpen, close } = useSidebar();
 
+  return (
+    <>
+      {/* Overlay for mobile */}
+      {isOpen && (
+        <div
+          className="fixed inset-0 bg-black/50 z-40 lg:hidden"
+          onClick={close}
+        />
+      )}
 
-            <div className="px-2 py-6 text-xl max-h-[180px] font-bold bg-[#343A40]">
-                <Link href="/">Start Bootstrap</Link>
-            </div>
+      {/* Sidebar */}
+      <aside
+        className={`
+                    fixed lg:static inset-y-0 left-0 z-50
+                    bg-[#202529] text-white w-64 flex flex-col
+                    transform transition-transform duration-300 ease-in-out
+                    ${isOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"}
+                `}
+      >
+        {/* Header */}
+        <div className="px-6 py-8 bg-[#343A40] flex items-center justify-between">
+          <Link
+            href="/"
+            className="text-xl font-bold hover:text-gray-300 transition-colors"
+          >
+            Start Bootstrap
+          </Link>
 
+          {/* Close button for mobile */}
+          <button
+            onClick={close}
+            className="lg:hidden text-gray-400 hover:text-white transition-colors"
+            aria-label="Close sidebar"
+          >
+            <FaTimes className="text-xl" />
+          </button>
+        </div>
 
+        {/* Navigation */}
+        <nav className="flex-1 p-4 space-y-1 overflow-y-auto">
+          <Link
+            href="/dashboard"
+            onClick={close}
+            className="flex items-center gap-3 px-3 py-2.5 text-base hover:bg-[#343A40] rounded transition-colors"
+          >
+            <FaTachometerAlt className="text-lg flex-shrink-0" />
+            <span>Dashboard</span>
+          </Link>
 
-            <nav className="p-4 space-y-5 text-xl">
-                <Link
-                    href="/dashboard"
-                    className="flex items-center gap-3 px-3 py-2 hover:bg-yellow-800 rounded"
-                >
-                    <FaTachometerAlt />
-                    Dashboard
-                </Link>
+          {/* Interface Section */}
+          <div className="text-gray-400 uppercase text-xs font-semibold px-3 pt-6 pb-2">
+            Interface
+          </div>
 
-                <div className="text-gray-400 uppercase text-sm px-3 mt-4">Interface</div>
+          <Link
+            href="#"
+            onClick={close}
+            className="flex items-center gap-3 px-3 py-2.5 text-base hover:bg-[#343A40] rounded transition-colors"
+          >
+            <FaLayerGroup className="text-lg flex-shrink-0" />
+            <span>Layouts</span>
+          </Link>
 
-                <Link
-                    href="#"
-                    className="flex items-center gap-3 px-3 py-2 hover:bg-yellow-800 rounded"
-                >
-                    <FaLayerGroup />
-                    Layouts
-                </Link>
+          <Link
+            href="#"
+            onClick={close}
+            className="flex items-center gap-3 px-3 py-2.5 text-base hover:bg-[#343A40] rounded transition-colors"
+          >
+            <FaFileAlt className="text-lg flex-shrink-0" />
+            <span>Pages</span>
+          </Link>
 
-                <Link
-                    href="#"
-                    className="flex items-center gap-3 px-3 py-2 hover:bg-yellow-800 rounded"
-                >
-                    <FaFileAlt />
-                    Pages
-                </Link>
+          {/* Addons Section */}
+          <div className="text-gray-400 uppercase text-xs font-semibold px-3 pt-6 pb-2">
+            Addons
+          </div>
 
-                <div className="text-gray-400 uppercase text-sm px-3 mt-4">Addons</div>
+          <Link
+            href="#"
+            onClick={close}
+            className="flex items-center gap-3 px-3 py-2.5 text-base hover:bg-[#343A40] rounded transition-colors"
+          >
+            <FaChartBar className="text-lg flex-shrink-0" />
+            <span>Charts</span>
+          </Link>
 
-                <Link
-                    href="#"
-                    className="flex items-center gap-3 px-3 py-2 hover:bg-yellow-800 rounded"
-                >
-                    <FaChartBar />
-                    Charts
-                </Link>
-
-                <Link
-                    href="dashboard/users"
-                    className="flex items-center gap-3 px-3 py-2 hover:bg-yellow-800 rounded"
-                >
-                    <FaTable />
-                    Tables
-                </Link>
-            </nav>
-        </aside>
-    );
+          <Link
+            href="/dashboard/users"
+            onClick={close}
+            className="flex items-center gap-3 px-3 py-2.5 text-base hover:bg-[#343A40] rounded transition-colors"
+          >
+            <FaTable className="text-lg flex-shrink-0" />
+            <span>Tables</span>
+          </Link>
+        </nav>
+      </aside>
+    </>
+  );
 }

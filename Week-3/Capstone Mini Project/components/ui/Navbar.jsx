@@ -1,37 +1,80 @@
+"use client";
+
 import { FaBars, FaUserCircle, FaSearch, FaCaretDown } from "react-icons/fa";
 import Input from "./Input";
 import Link from "next/link";
+import { useSidebar } from "@/context/SidebarContext";
+import { useState } from "react";
 
 export default function Navbar() {
-    return (
-        <nav className="flex justify-between items-center bg-[#343A40] px-6 py-3 min-h-[60px]">
-            <div className="flex items-center gap-3 px-2">
-                <FaBars className="text-[#9FA8A8] text-xl cursor-pointer" />
-            </div>
+  const { toggle } = useSidebar();
+  const [showSearch, setShowSearch] = useState(false);
 
-            <div className="flex items-center gap-4 flex-1 justify-end min-w-0">
+  return (
+    <nav className="bg-[#343A40] px-4 sm:px-6 py-3 shadow-md sticky top-0 z-30">
+      <div className="flex items-center justify-between gap-3">
+        {/* Left: Menu Toggle */}
+        <button
+          onClick={toggle}
+          className="text-[#bebebe] hover:text-white text-xl transition-colors p-2"
+          aria-label="Toggle sidebar"
+        >
+          <FaBars />
+        </button>
 
-                <div className="flex items-center bg-white rounded-lg flex-1 max-w-lg min-w-[120px]">
+        {/* Center: Search Bar (Desktop) */}
+        <div className="hidden md:flex items-center bg-white rounded-lg overflow-hidden shadow-sm flex-1 max-w-md">
+          <Input
+            placeholder="Search for..."
+            className="flex-1 border-0 focus:ring-0 focus:outline-none px-4 py-2.5"
+          />
+          <button
+            className="bg-[#efdd3e] hover:bg-[#f0b100] text-white px-5 py-3.5 transition-colors flex items-center justify-center"
+            aria-label="Search"
+          >
+            <FaSearch className="text-base" />
+          </button>
+        </div>
 
-                    <Input
-                        placeholder="Search for..."
-                        className="flex-1 rounded-l-lg border-white"
-                    />
+        {/* Right: Search Icon (Mobile) & Profile */}
+        <div className="flex items-center gap-2 sm:gap-4">
+          {/* Mobile Search Toggle */}
+          <button
+            onClick={() => setShowSearch(!showSearch)}
+            className="md:hidden text-[#e5e5e5] hover:text-white text-xl transition-colors p-2"
+            aria-label="Toggle search"
+          >
+            <FaSearch />
+          </button>
 
-                    <button className="bg-yellow-400 text-white px-4 py-4 rounded-r-lg flex items-center justify-center">
-                        <FaSearch className="text-xl" />
-                    </button>
-                </div>
+          {/* User Profile Dropdown */}
+          <Link href="/dashboard/profile">
+            <button className="flex items-center gap-2 text-[#ffffff] hover:text-white transition-colors p-2 rounded-lg hover:bg-[#2C3034]">
+              <FaUserCircle className="text-2xl" />
+              <span className="text-sm font-medium hidden sm:inline">
+                Profile
+              </span>
+              <FaCaretDown className="text-xs hidden sm:inline" />
+            </button>
+          </Link>
+        </div>
+      </div>
 
-                <Link href="/dashboard/profile">
-                    <button className="flex items-center text-2xl text-[#9FA8A8] cursor-pointer gap-1">
-                        <FaUserCircle />
-                        <FaCaretDown />
-                    </button>
-                </Link>
-
-            </div>
-
-        </nav>
-    );
+      {/* Mobile Search Bar */}
+      {showSearch && (
+        <div className="md:hidden mt-3 flex items-center bg-white rounded-lg overflow-hidden shadow-sm">
+          <Input
+            placeholder="Search for..."
+            className="flex-1 border-0 focus:ring-0 focus:outline-none px-4 py-2.5"
+          />
+          <button
+            className="bg-[#efdd3e] hover:bg-[#f0b100] text-white px-5 py-2.5 transition-colors flex items-center justify-center"
+            aria-label="Search"
+          >
+            <FaSearch className="text-base" />
+          </button>
+        </div>
+      )}
+    </nav>
+  );
 }

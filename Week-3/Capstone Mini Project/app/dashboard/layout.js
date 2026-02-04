@@ -1,29 +1,22 @@
-import "@/app/globals.css";
-import Navbar from "@/components/ui/Navbar";
+"use client";
 import Sidebar from "@/components/ui/Sidebar";
+import Navbar from "@/components/ui/Navbar";
+import { SidebarProvider } from "@/context/SidebarContext";
 
-export const metadata = {
-    title: "Dashboard",
-    description: "Next.js Admin Dashboard Layout",
-};
+export default function DashboardLayout({ children }) {
+  return (
+    <SidebarProvider>
+      <div className="flex h-screen overflow-hidden">
+        <Sidebar />
 
+        <div className="flex flex-col flex-1 overflow-hidden">
+          <Navbar />
 
-export default function RootLayout({ children }) {
-    return (
-        <html lang="en" className="h-full">
-            <body className="h-full">
-                <div className="flex h-full">
-
-                    <Sidebar />
-
-                    <div className="flex flex-col flex-1">
-                        <Navbar />
-                        <main className="flex-1 overflow-auto">
-                            {children}
-                        </main>
-                    </div>
-                </div>
-            </body>
-        </html>
-    );
+          <main className="flex-1 overflow-y-auto bg-gray-100 p-4 sm:p-6 lg:p-8">
+            {children}
+          </main>
+        </div>
+      </div>
+    </SidebarProvider>
+  );
 }
