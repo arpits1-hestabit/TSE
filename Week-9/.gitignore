@@ -3,3 +3,6 @@ __pycache__
 models
 .env
 memory_store
+.cache
+.DS_Store
+.ipynb_checkpoints
