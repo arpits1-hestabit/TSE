@@ -20,3 +20,23 @@
 2025-12-15T11:15:19.803Z info: App initialized
 2025-12-15T11:15:19.805Z info: Email worker started
 2025-12-15T11:15:19.806Z info: ✔ Server started on port 5000 [local]
+2026-02-04T16:03:46.614Z info: Total Routes: 4
+2026-02-04T16:03:46.734Z info: db connected
+2026-02-04T16:03:46.736Z info: Middlewares loaded
+2026-02-04T16:03:46.736Z info: App initialized
+2026-02-04T16:03:46.739Z info: Email worker started
+2026-02-04T16:03:46.739Z info: ✔ Server started on port 3000 [local]
+2026-02-04T16:09:33.797Z info: Total Routes: 4
+2026-02-04T16:09:33.971Z error: db connection errorquerySrv ENOTFOUND _mongodb._tcp.prod-cluster.mongodb.net
+2026-02-04T16:09:49.280Z info: Total Routes: 4
+2026-02-04T16:09:49.380Z info: db connected
+2026-02-04T16:09:49.382Z info: Middlewares loaded
+2026-02-04T16:09:49.382Z info: App initialized
+2026-02-04T16:09:49.385Z info: Email worker started
+2026-02-04T16:09:49.385Z info: ✔ Server started on port 5000 [development]
+2026-02-04T16:10:01.559Z info: Total Routes: 4
+2026-02-04T16:10:01.650Z info: db connected
+2026-02-04T16:10:01.651Z info: Middlewares loaded
+2026-02-04T16:10:01.651Z info: App initialized
+2026-02-04T16:10:01.653Z info: Email worker started
+2026-02-04T16:10:01.653Z info: ✔ Server started on port 3000 [local]
