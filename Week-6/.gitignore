@@ -1,3 +1,4 @@
 venv/
 Week-6/src/data/processed/final.csv
 __pycache__
+.dockerignore
