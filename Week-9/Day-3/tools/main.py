@@ -3,7 +3,7 @@ from tools.orchestrator import run_orchestration, summarize_results
 from agents.answer_agent import answer_agent
 
 async def main():
-    user_query = "Analyze sales.csv and generate top 5 insights"
+    user_query = input("Enter your query: ")
 
     context = await run_orchestration(user_query)
     summary = summarize_results(context)

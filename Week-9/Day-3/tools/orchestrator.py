@@ -6,7 +6,7 @@ from pydantic import BaseModel
 from dotenv import load_dotenv
 from autogen_agentchat.agents import AssistantAgent
 from file_agent import file_agent
-from code_agent import code_executor
+from code_executor import code_executor
 from db_agent import db_agent
 
 load_dotenv()
