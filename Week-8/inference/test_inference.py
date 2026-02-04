@@ -161,5 +161,29 @@ async def benchmark():
         writer.writeheader()
         writer.writerows(results)
 
+    # Inference quality tests
+    print("\n=== Running Inference Quality Tests ===")
+    for model in MODELS:
+        base_url = f"http://localhost:{model['port']}/v1"
+        client = AsyncOpenAI(base_url=base_url, api_key="EMPTY")
+        
+        bleu_scores = [r["bleu_score"] for r in results if r["model"] == model["name"] and r["bleu_score"]]
+        exact_matches = [r["exact_match"] for r in results if r["model"] == model["name"] and r["exact_match"] is not None]
+        
+        avg_bleu = sum(bleu_scores) / len(bleu_scores) if bleu_scores else 0
+        avg_exact = sum(exact_matches) / len(exact_matches) if exact_matches else 0
+        
+        print(f"{model['name']} | Avg BLEU={avg_bleu:.4f} | Avg Exact Match={avg_exact:.2%}")
+        assert avg_bleu > 0, f"BLEU score too low for {model['name']}"
+        
+    # Performance regression tests
+    print("\n=== Running Performance Regression Tests ===")
+    for model in MODELS:
+        ttft_values = [r["ttft_sec"] for r in results if r["model"] == model["name"] and r["ttft_sec"]]
+        avg_ttft = sum(ttft_values) / len(ttft_values) if ttft_values else 0
+        
+        print(f"{model['name']} | Avg TTFT={avg_ttft:.3f}s")
+        assert avg_ttft < 5.0, f"TTFT regression detected for {model['name']}"
+
 if __name__ == "__main__":
     asyncio.run(benchmark())
