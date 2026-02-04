@@ -1,33 +1,32 @@
 import logging
 import os
+from config import LOG_FILE
 
-def setup_logger(log_file="nexus.log"):
-    """
-    Configures and returns the Nexus_AI logger.
-    - Logs DEBUG+ messages to a file.
-    - Logs INFO+ messages to the console.
-    - If the logger is already configured, returns the existing logger instance.
-    """
-    os.makedirs("logs", exist_ok=True)
-    log_path = os.path.join("logs", log_file)
+def setup_logger():
 
-    logger = logging.getLogger("NEXUS_AI") # named loggers are reusable across files/modules, as calling this again returns the same logger instance
+    # Ensure directory exists
+    log_dir = os.path.dirname(LOG_FILE)
+    os.makedirs(log_dir, exist_ok=True)
+
+    logger = logging.getLogger("NEXUS_AI")
     logger.setLevel(logging.DEBUG)
 
-    # Check if file handler is already added(if this check would be removed then the logs would print multiple times is setup_logger is called more than once)
     if not logger.handlers:
+
         # File handler
-        fh = logging.FileHandler(log_path, encoding="utf-8")
+        fh = logging.FileHandler(LOG_FILE, encoding="utf-8")
         fh.setLevel(logging.DEBUG)
-        fh_formatter = logging.Formatter('%(asctime)s | %(levelname)s | %(message)s')
-        fh.setFormatter(fh_formatter)
+        fh.setFormatter(
+            logging.Formatter("%(asctime)s | %(levelname)s | %(message)s")
+        )
         logger.addHandler(fh)
 
         # Console handler
         ch = logging.StreamHandler()
         ch.setLevel(logging.INFO)
-        ch_formatter = logging.Formatter('%(asctime)s | %(levelname)s | %(message)s')
-        ch.setFormatter(ch_formatter)
+        ch.setFormatter(
+            logging.Formatter("%(asctime)s | %(levelname)s | %(message)s")
+        )
         logger.addHandler(ch)
 
     return logger

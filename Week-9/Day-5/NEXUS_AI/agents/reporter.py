@@ -19,10 +19,10 @@ class ReporterAgent:
     This agent acts as the final synthesis and presentation layer of the system.
     """
 
-    def __init__(self, model_client, output_dir="outputs"):
+    def __init__(self, model_client, output_dir="NEXUS_AI/outputs"):
         """
         Initializes the Reporter agent with a language model client.
-        """
+        """         
 
         self.agent = AssistantAgent(
             name="Reporter",

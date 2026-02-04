@@ -31,7 +31,7 @@ class SemanticMemory:
         """
 
         # Directory for persisting memory files
-        self.memory_dir = "memory_store"
+        self.memory_dir = "NEXUS_AI/memory_store"
         os.makedirs(self.memory_dir, exist_ok=True)
 
         # File paths for FAISS index and stored text
