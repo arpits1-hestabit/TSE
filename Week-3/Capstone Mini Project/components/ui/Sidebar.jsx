@@ -59,7 +59,7 @@ export default function Sidebar() {
             onClick={close}
             className="flex items-center gap-3 px-3 py-2.5 text-base hover:bg-[#343A40] rounded transition-colors"
           >
-            <FaTachometerAlt className="text-lg flex-shrink-0" />
+            <FaTachometerAlt className="text-lg shrink-0" />
             <span>Dashboard</span>
           </Link>
 
@@ -73,7 +73,7 @@ export default function Sidebar() {
             onClick={close}
             className="flex items-center gap-3 px-3 py-2.5 text-base hover:bg-[#343A40] rounded transition-colors"
           >
-            <FaLayerGroup className="text-lg flex-shrink-0" />
+            <FaLayerGroup className="text-lg shrink-0" />
             <span>Layouts</span>
           </Link>
 
@@ -82,7 +82,7 @@ export default function Sidebar() {
             onClick={close}
             className="flex items-center gap-3 px-3 py-2.5 text-base hover:bg-[#343A40] rounded transition-colors"
           >
-            <FaFileAlt className="text-lg flex-shrink-0" />
+            <FaFileAlt className="text-lg shrink-0" />
             <span>Pages</span>
           </Link>
 
@@ -96,7 +96,7 @@ export default function Sidebar() {
             onClick={close}
             className="flex items-center gap-3 px-3 py-2.5 text-base hover:bg-[#343A40] rounded transition-colors"
           >
-            <FaChartBar className="text-lg flex-shrink-0" />
+            <FaChartBar className="text-lg shrink-0" />
             <span>Charts</span>
           </Link>
 
@@ -105,7 +105,7 @@ export default function Sidebar() {
             onClick={close}
             className="flex items-center gap-3 px-3 py-2.5 text-base hover:bg-[#343A40] rounded transition-colors"
           >
-            <FaTable className="text-lg flex-shrink-0" />
+            <FaTable className="text-lg shrink-0" />
             <span>Tables</span>
           </Link>
         </nav>

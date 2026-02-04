@@ -7,7 +7,7 @@ import Footer from "@/components/ui/Footer";
 
 export default function Home() {
   return (
-    <div className="scrollbar-hide w-[100%]">
+    <div className="scrollbar-hide w-full">
       <Particles className="absolute inset-0 z-10"
         quantity={400}
         ease={10}

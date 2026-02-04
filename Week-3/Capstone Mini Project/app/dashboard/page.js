@@ -69,7 +69,7 @@ export default function DashboardPage() {
           <h2 className="text-lg sm:text-xl font-bold text-gray-800">Area Chart Example</h2>
         </div>
         
-        <div className="h-64 sm:h-80 bg-gradient-to-br from-blue-50 to-blue-100 rounded flex items-center justify-center">
+        <div className="h-64 sm:h-80 bg-linear-to-br from-blue-50 to-blue-100 rounded flex items-center justify-center">
           <div className="text-center">
             <FaChartArea className="text-blue-300 text-6xl mx-auto mb-4" />
             <p className="text-gray-600 font-medium">Area Chart Placeholder</p>
