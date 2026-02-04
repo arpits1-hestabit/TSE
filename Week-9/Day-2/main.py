@@ -8,16 +8,17 @@ from agents.reflection import ReflectionAgent
 from agents.validator import ValidatorAgent
 from agents.orchestrator.planner import OrchestratorAgent
 
-from messages import UserTask
+from agents.messages import UserTask
 
 
 async def main():
     runtime = SingleThreadedAgentRuntime()
-    model_client = get_ollama_client("granite3-dense:8b")
+    #model_client = get_ollama_client("granite3-dense:8b")
     #model_client = get_ollama_client("ordis/gte-Qwen2-7B-instruct-Q5_K_M-GGUF-8k:latest")
     #model_client = get_ollama_client("tinyllama")
     #model_client = get_ollama_client("phi3:14b")
     #model_client = get_ollama_client("mistral:7b")
+    model_client = get_ollama_client("qwen3:8b")
     await WorkerAgent.register(
         runtime,
         "worker",

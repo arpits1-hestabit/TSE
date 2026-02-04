@@ -4,7 +4,7 @@ import asyncio
 
 from autogen_core import RoutedAgent, MessageContext, message_handler
 from autogen_core.models import SystemMessage, UserMessage, ChatCompletionClient
-from messages import WorkerTask, WorkerTaskResult
+from .messages import WorkerTask, WorkerTaskResult
 
 
 class WorkerAgent(RoutedAgent):

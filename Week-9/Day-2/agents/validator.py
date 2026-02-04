@@ -4,7 +4,7 @@ import re
 from autogen_core import RoutedAgent, MessageContext, message_handler
 from autogen_core.models import SystemMessage, UserMessage, ChatCompletionClient
 
-from messages import ValidationTask, ValidationResult
+from .messages import ValidationTask, ValidationResult
 
 
 class ValidatorAgent(RoutedAgent):

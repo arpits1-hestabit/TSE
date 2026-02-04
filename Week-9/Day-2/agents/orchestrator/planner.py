@@ -6,7 +6,7 @@ from typing import List
 from autogen_core import AgentId, RoutedAgent, MessageContext, message_handler
 from autogen_core.models import SystemMessage, UserMessage, ChatCompletionClient
 
-from messages import (
+from ..messages import (
     UserTask,
     WorkerTask,
     ReflectionTask,

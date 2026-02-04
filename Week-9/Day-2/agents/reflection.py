@@ -3,7 +3,7 @@ from typing import List
 
 from autogen_core import RoutedAgent, MessageContext, message_handler
 from autogen_core.models import SystemMessage, UserMessage, ChatCompletionClient
-from messages import ReflectionTask, ReflectedResult
+from .messages import ReflectionTask, ReflectedResult
 
 
 class ReflectionAgent(RoutedAgent):
