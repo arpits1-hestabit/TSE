@@ -5,124 +5,250 @@ from semantic_memory import SemanticMemory
 
 class OrchestratorAgent:
     """
-    Central coordinator responsible for executing a planner-generated task plan
-    using multiple specialized agents, while leveraging semantic memory for
-    contextual recall across runs.
-
-    Responsibilities:
-    - Executes agent tasks sequentially based on a JSON execution plan
-    - Retrieves relevant past context using FAISS-backed semantic memory
-    - Injects recalled memory into agent prompts when available
-    - Stores new task-response pairs back into memory
-    - Delegates final result compilation to the Reporter agent
-    - Logs execution progress and output locations
-
-    This class acts as the backbone of the multi-agent execution pipeline.
+    DAG-based multi-agent orchestrator responsible for:
+    - Executing agents based on dependency graph
+    - Enforcing per-agent confidence contracts
+    - Retrying validation-driven optimizations
     """
+
+    AGENT_GRAPH = {
+        "Researcher": [],
+        "Analyst": [],
+        "Coder": ["Researcher"],
+        "Critic": ["Coder"],
+        "Optimizer": ["Coder", "Critic"],
+        "Validator": ["Optimizer"],
+    }
+
+    MAX_VALIDATION_RETRIES = 2
+    MAX_CONFIDENCE_RETRIES = 2
+
+    LOW_CONFIDENCE_THRESHOLD = 0.6
+    CONFIDENCE_FALLBACK = 0.3
 
     def __init__(self, agents, logger, output_dir="outputs"):
         """
-        Initializes the OrchestratorAgent.
-
-        :param agents: Dictionary mapping agent names to agent instances
-        :param logger: Application logger for structured logging
-        :param output_dir: Directory where final reports will be saved
+        Initialize orchestrator with agents, logger, and persistent memory.
         """
         self.agents = agents
         self.logger = logger
-
-        # Initialize FAISS-based semantic memory
         self.memory = SemanticMemory()
 
-        # Ensure output directory exists
         self.output_dir = output_dir
         os.makedirs(self.output_dir, exist_ok=True)
 
+    # Helper functions for memory, dependency checking, and confidence parsing
+
     def build_memory_context(self, query: str) -> str:
         """
-        Builds a contextual memory block for a given query using semantic search.
-        If relevant past memories are found, a short summarized context is
-        constructed and injected into the agent prompt. If no memory is found,
-        an empty string is returned.
+        Retrieve semantically similar past outputs to enrich agent prompts.
         """
         recalled = self.memory.search(query, k=2)
-
         if not recalled:
             return ""
 
         context = "\n\nRelevant Past Memory:\n"
         for mem in recalled:
-            # Truncate memory to avoid excessively long prompts
             context += f"- {mem[:200]}...\n"
-
         return context
+
+    def dependencies_satisfied(self, agent_name, results):
+        """
+        Check whether all dependency agents have completed execution.
+        """
+        return all(dep in results for dep in self.AGENT_GRAPH.get(agent_name, []))
+
+    def extract_confidence(self, output: str):
+        """
+        Parse CONFIDENCE score from agent output.
+        """
+        if "CONFIDENCE:" not in output:
+            return None
+        try:
+            score = float(output.split("CONFIDENCE:")[-1].strip())
+            if 0.0 <= score <= 1.0:
+                return score
+        except Exception:
+            pass
+        return None
+
+    def strip_confidence(self, output: str) -> str:
+        """
+        Remove confidence line from agent output before downstream usage.
+        """
+        return output.split("CONFIDENCE:")[0].strip()
+
+    async def run_agent_with_confidence(self, agent_name, prompt):
+        """
+        Execute an agent while enforcing confidence contract and retries.
+        """
+        raw_output = None
+        conf_score = None
+
+        for _ in range(self.MAX_CONFIDENCE_RETRIES):
+            raw_output = await self.agents[agent_name].run(prompt)
+            conf_score = self.extract_confidence(raw_output)
+
+            if conf_score is not None:
+                break
+
+            self.logger.warning(
+                f"{agent_name} did not return valid CONFIDENCE. Retrying..."
+            )
+
+        if conf_score is None:
+            conf_score = self.CONFIDENCE_FALLBACK
+            self.logger.error(
+                f"{agent_name} violated confidence contract. "
+                f"Assigned fallback CONFIDENCE={conf_score}"
+            )
+
+        clean_output = self.strip_confidence(raw_output)
+
+        self.logger.info(f"[CONFIDENCE] {agent_name}: {conf_score:.2f}")
+
+        if conf_score < self.LOW_CONFIDENCE_THRESHOLD:
+            self.logger.warning(
+                f"[LOW CONFIDENCE] {agent_name}: {conf_score:.2f}"
+            )
+
+        return clean_output, conf_score
+
+    # Main execution loop
 
     async def run(self, user_question: str, plan_json: str):
         """
-        Executes a full multi-agent workflow based on a planner-generated plan.
-
-        Workflow:
-        1. Parse the JSON execution plan
-        2. Execute each agent task (except Reporter)
-        3. Inject relevant semantic memory into prompts
-        4. Store agent outputs in memory
-        5. Run the Reporter agent for final compilation
+        Execute the DAG-based multi-agent workflow end-to-end.
         """
         plan = json.loads(plan_json)
         results = {}
+        confidence = {}
 
-        self.logger.info("Executing tasks with Semantic Memory...")
+        self.logger.info("Executing DAG-based multi-agent workflow...")
 
-        # Execute all agents except Reporter
-        for task_item in plan["tasks"]:
-            agent_name = task_item["agent"]
-            task = task_item["task"]
+        pending_agents = {
+            task["agent"]: task["task"]
+            for task in plan["tasks"]
+            if task["agent"] != "Reporter"
+        }
 
-            # Reporter is executed at the end
-            if agent_name == "Reporter":
-                continue
+        while pending_agents:
+            progressed = False
 
-            # Skip unknown agents gracefully
-            if agent_name not in self.agents:
-                self.logger.warning(f"Agent '{agent_name}' not found. Skipping.")
-                continue
+            for agent_name in list(pending_agents.keys()):
+                if agent_name not in self.agents:
+                    self.logger.warning(f"Agent '{agent_name}' not found. Skipping.")
+                    pending_agents.pop(agent_name)
+                    continue
 
-            self.logger.info(f"Executing {agent_name} task...")
+                if not self.dependencies_satisfied(agent_name, results):
+                    continue
 
-            # Retrieve relevant semantic memory
-            memory_context = self.build_memory_context(task)
+                base_task = pending_agents.pop(agent_name)
+                progressed = True
 
-            # Construct final prompt with optional memory context
-            final_prompt = f"""
-            TASK:
-            {task}
+                self.logger.info(f"Executing {agent_name}...")
 
-            {memory_context}
-            """
+                memory_context = self.build_memory_context(base_task)
 
-            agent = self.agents[agent_name]
-            output = await agent.run(final_prompt)
+                dependency_context = ""
+                for dep in self.AGENT_GRAPH.get(agent_name, []):
+                    dependency_context += f"\n\n{dep} OUTPUT:\n{results[dep][:1200]}"
 
-            # Persist task-output pair into semantic memory
-            self.memory.add(task, output)
+                final_prompt = f"""
+                TASK:
+                {base_task}
 
-            # Store output for downstream agents
-            results[agent_name] = output
+                {memory_context}
 
-        # Execute Reporter agent last for final aggregation
+                {dependency_context}
+
+                You MUST always include a final line:
+                CONFIDENCE: <number between 0 and 1>
+
+                Use this scale:
+                - 0.9-1.0: Deterministic, well-known, no assumptions
+                - 0.7-0.9: Mostly confident, minor assumptions
+                - 0.5-0.7: Reasonable but incomplete or uncertain
+                - 0.3-0.5: Speculative, multiple assumptions
+                - <0.3: Guessing or low reliability
+                """
+
+                output, conf = await self.run_agent_with_confidence(
+                    agent_name, final_prompt
+                )
+
+                results[agent_name] = output
+                confidence[agent_name] = conf
+                self.memory.add(base_task, output)
+
+                # Validation retries if Validator fails
+                if agent_name == "Validator":
+                    retries = 0
+
+                    while retries < self.MAX_VALIDATION_RETRIES:
+                        if "VALIDATION_STATUS: FAIL" not in output:
+                            break
+
+                        self.logger.warning(
+                            f"Validation failed. Retrying optimization ({retries + 1})..."
+                        )
+
+                        optimizer = self.agents.get("Optimizer")
+                        if not optimizer:
+                            break
+
+                        retry_prompt = f"""
+                        Fix ONLY the issues reported by the validator.
+                        Do NOT restate the entire solution.
+                        
+                        Validator Feedback:
+                        {output[:800]}
+                        """
+
+                        optimized, opt_conf = await self.run_agent_with_confidence(
+                            "Optimizer", retry_prompt
+                        )
+
+                        results["Optimizer"] = optimized
+                        confidence["Optimizer"] = opt_conf
+
+                        output, val_conf = await self.run_agent_with_confidence(
+                            "Validator", optimized
+                        )
+
+                        results["Validator"] = output
+                        confidence["Validator"] = val_conf
+
+                        retries += 1
+
+            if not progressed:
+                self.logger.error("DAG execution stalled due to unmet dependencies.")
+                break
+
+        self.logger.info("Final agent confidence summary:")
+        for agent, score in confidence.items():
+            self.logger.info(f"  - {agent}: {score:.2f}")
+
+        # Report generation with Reporter agent
         if "Reporter" in self.agents:
             self.logger.info("Executing Reporter (Final Compilation)...")
-            reporter_agent = self.agents["Reporter"]
 
-            reporter_output = await reporter_agent.run(user_question, results)
+            reporter_output = await self.agents["Reporter"].run(
+                user_question,
+                {
+                    "outputs": results,
+                    "confidence": confidence,
+                },
+            )
+
             results["Reporter"] = reporter_output
 
-            # Log the saved report file path
-            sanitized_name = reporter_agent.sanitize_filename(user_question)
-            report_path = os.path.join(self.output_dir, sanitized_name + ".md")
-            self.logger.info(f"Reporter output saved -> {report_path}")
+            filename = self.agents["Reporter"].sanitize_filename(user_question)
+            path = os.path.join(self.output_dir, filename + ".md")
+            self.logger.info(f"Reporter output saved -> {path}")
 
-        else:
-            self.logger.warning("Reporter agent not found. Nothing saved.")
-
-        return results
+        return {
+            "outputs": results,
+            "confidence": confidence,
+        }

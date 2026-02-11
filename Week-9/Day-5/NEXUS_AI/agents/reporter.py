@@ -22,7 +22,7 @@ class ReporterAgent:
     def __init__(self, model_client, output_dir="NEXUS_AI/outputs"):
         """
         Initializes the Reporter agent with a language model client.
-        """         
+        """
 
         self.agent = AssistantAgent(
             name="Reporter",
@@ -54,33 +54,51 @@ class ReporterAgent:
         """
         Generates and saves the final report based on aggregated agent outputs.
 
-        Workflow:
-        1. Constructs a prompt containing the user question and agent outputs
-        2. Sends the prompt to the Reporter LLM agent
-        3. Receives a consolidated final answer
-        4. Saves the result as a markdown file in the output directory
+        Supports both:
+        - Legacy format: {agent_name: output}
+        - New format: {
+            "outputs": {agent_name: output},
+            "confidence": {agent_name: float}
+          }
         """
 
         cancellation = CancellationToken()
 
+        # Normalize input (backward compatible)
+        if "outputs" in aggregated_outputs:
+            outputs = aggregated_outputs.get("outputs", {})
+            confidence = aggregated_outputs.get("confidence", {})
+        else:
+            outputs = aggregated_outputs
+            confidence = {}
+
         # Build prompt for the Reporter agent
         prompt = f"""
-            USER QUESTION:
-            {user_question}
+        USER QUESTION:
+        {user_question}
 
-            AGENT OUTPUTS:
+        AGENT OUTPUTS:
         """
 
-        for agent_name, output in aggregated_outputs.items():
-            # Truncate individual agent outputs to keep prompt size reasonable
-            prompt += f"### {agent_name} Output:\n{output[:1200]}\n\n"
+        for agent_name, output in outputs.items():
+            # Ensure output is always string-safe
+            if not isinstance(output, str):
+                output = str(output)
+
+            score = confidence.get(agent_name)
+
+            header = f"### {agent_name} Output"
+            if score is not None:
+                header += f" (confidence: {score:.2f})"
+
+            prompt += f"{header}:\n{output[:1200]}\n\n"
 
         prompt += (
             "Instructions: Compile all outputs into one final answer, "
-            "in a clear and structured manner."
+            "in a clear, concise, and well-structured manner."
         )
 
-        # Invoke the Reporter agent
+        # Invoke Reporter agent
         response = await self.agent.on_messages(
             [TextMessage(content=prompt, source="user")],
             cancellation
@@ -88,13 +106,12 @@ class ReporterAgent:
 
         final_text = response.chat_message.content
 
-        # Create a safe filename from the user question
+        # Save to disk
         filename = self.sanitize_filename(user_question) + ".md"
         filepath = os.path.join(self.output_dir, filename)
 
-        # Persist the final report to disk
         with open(filepath, "w", encoding="utf-8") as f:
-            f.write(f"# User Question:\n{user_question}\n\n")
+            f.write(f"# User Question\n\n{user_question}\n\n")
             f.write("# Final Answer (Reporter Output)\n\n")
             f.write(final_text)
 
